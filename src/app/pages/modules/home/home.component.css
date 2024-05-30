@@ -1,0 +1,20 @@
+.bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #333, #777);
+
+}
+
+mat-sidenav{
+    width: 210px;
+    background-color: rgb(48, 47, 47);
+
+}
+
+mat-sidenav-container{
+    height: 100%;
+    background-color: transparent;
+}

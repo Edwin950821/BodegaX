@@ -1,0 +1,31 @@
+<div class="bg">
+    <mat-card class="transparent">
+        <mat-card-content class="center">
+            <h1>Login</h1>
+            <img src="/assets/bodegax.png" class="img">
+            <mat-divider class="dark"></mat-divider>
+            <div class="padding">
+                <mat-form-field class="mini">
+                    <mat-label>
+                        Usuario
+                    </mat-label>
+                    <input matInput [(ngModel)]="username">
+                </mat-form-field>
+                <mat-form-field class="mini">
+                    <mat-label>
+                        Contraseña
+                    </mat-label>
+                    <input type="password" matInput [(ngModel)]="password">
+                </mat-form-field>  
+
+                <button (click)="login()" mat-raised-button color="primary" class="blue">Iniciar sesion</button>
+
+            </div>
+
+            <div>
+                <button mat-raised-button>Registrarse</button>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
