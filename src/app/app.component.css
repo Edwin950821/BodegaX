@@ -1,0 +1,38 @@
+mat-sidenav{
+    width: 210px;
+    color: white;
+    background-color: rgb(73, 71, 71);
+}
+
+mat-sidenav-container{
+    height: 100%;
+
+}
+
+.sidebar-text{
+    padding:0px 5px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+}
+
+.img2{
+    width: 27px;
+    padding: 20px;
+    text-align: center;
+}
+
+.img3{
+    width: 20px;
+    padding: 12px;
+}
+
+.cerrar{
+    font-size: 15px;
+}
+
+
+.p-b{
+    position: absolute;
+    bottom: 10px;
+}

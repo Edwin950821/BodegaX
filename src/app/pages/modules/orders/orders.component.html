@@ -1,0 +1,61 @@
+
+<div class="bg">
+    
+    <img src="/assets/icon.png" class="icon" >
+
+     <div class="center title">
+        <img src="/assets/pedidos.png" class="iorder"> 
+        <h1 class="white">Pedidos</h1>
+     </div>
+    <div class="w-100 white">
+
+        <div class="d-flex">
+            <table>
+                <tr>
+                    <th> Cliente </th>
+                    <th> Cantidad (cajas) </th>
+                    <th> Total </th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+                </tr>
+                <tr class="center">
+                    <td> Pacamar </td>
+                    <td> 4 </td>
+                    <td>$240.000</td>
+                    <u  class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'">Ver</u>
+                </tr>
+                <tr class="center">
+                    <td> La Primavera </td>
+                    <td> 6 </td>
+                    <td>$360.000</td>
+                    <u  class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'" >Ver</u>
+                </tr> 
+
+
+                <tr class="center, green">
+                    <th>Total </th>
+                    <th>10</th>
+                    <th>$600.000</th>
+                </tr>
+
+                
+
+                
+
+
+            </table>
+
+        </div>
+
+        <div class="center">
+            <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet"
+                href="c:\Users\USUARIO\Downloads\terminar.png">
+                <img src="/assets/terminar.png" class="img1"> Terminar Jornada
+            </button>
+
+        </div>
+
+    </div>
+
+   
+
+</div>

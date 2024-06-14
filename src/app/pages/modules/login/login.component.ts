@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MessageDialog } from '../../../shared/util/confirm/dialog-message';
 import { Router } from '@angular/router';
+import { AppService } from '../../../app.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
     {name: 'La primavera', role: 'user', username: 'LaPrimavera', password: '12345'}
   ]
   
-  constructor(private dialog: MatDialog, private router: Router){
+  constructor(private dialog: MatDialog, private router: Router, private appSvc: AppService){
 
   }
   
@@ -41,8 +42,7 @@ export class LoginComponent {
       return
     }else{
       if(userfound.password == this.password){
-        sessionStorage.setItem('bodegax', JSON.stringify(userfound))
-        this.router.navigate(['/'])
+        this.appSvc.logIn(userfound)
       }else{
         this.dialog.open(MessageDialog, {
           data:{

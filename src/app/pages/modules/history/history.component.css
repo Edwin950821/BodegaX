@@ -1,0 +1,59 @@
+.hbr{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #333, #777);
+    display: flex;
+}
+
+
+.h-100{
+    width: 100%;
+    margin: 0 auto;
+    align-content: center;
+}
+
+
+.hicn{
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 50px;
+    right: 100px;
+}
+
+.htitle{
+    position: absolute;
+    display: flex ;
+    top: 50px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+
+.horder{
+    width: 50px;
+    padding: 8px;
+}
+
+.hwhite{
+    color: white;
+}
+
+.hsize{
+    font-size: 15px;
+}
+
+.hcenter{
+    text-align: center;  
+
+}
+
+.h-flex{
+    display: flex;
+    justify-content: center;
+    padding: 30px;  
+}

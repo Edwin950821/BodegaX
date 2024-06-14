@@ -1,1 +1,61 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav *ngIf="logged==true" [opened]="appSvc.showSidebar$ | async" mode="side">
+        <div *ngIf="role=='user'">
+
+            <div class="sidebar-text" [routerLink]="'/home'" href=" c:\Users\USUARIO\assets\inicio.png">
+                <img src="/assets/inicio.png" class="img2">
+                <h2>Inicio</h2>
+
+            </div>
+
+
+            <div class="sidebar-text" [routerLink]="'/history'" href="c:\Users\USUARIO\assets\historial.png">
+                <img src="/assets/historial.png" class="img2">
+                <h2>Historial</h2>
+            </div>
+
+
+            <div class="sidebar-text p-b" (click)="logOut()" href="c:\Users\USUARIO\Downloads\terminar.png">
+                <img src="/assets/terminar.png" class="img3">
+                <h2 class="cerrar">Cerrar Sesión</h2>
+            </div>
+
+
+        </div>
+
+        <div *ngIf="role=='admin'">
+
+            <div class="sidebar-text" [routerLink]="'/home'" href="c:\Users\USUARIO\assets\venta.png">
+                <img src="/assets/venta.png" class="img2">
+                <h2>Venta</h2>
+            </div>
+
+            <div class="sidebar-text" [routerLink]="'/hsale'" href="c:\Users\USUARIO\assets\historial.png">
+                <img src="/assets/historial.png" class="img2">
+                <h2>Historial</h2>
+            </div>
+
+            <div class="sidebar-text" [routerLink]="'/management'" href="c:\Users\USUARIO\assets\gestion.png">
+                <img src="/assets/gestion.png" class="img2">
+                <h2>Mi Bodega</h2>
+            </div>
+
+            <div class="sidebar-text" [routerLink]="'/orders'" href="c:\Users\USUARIO\assets\pedidos.png">
+                <img src="/assets/pedidos.png" class="img2">
+                <h2>Pedidos</h2>
+            </div>
+            <div class="sidebar-text" [routerLink]="'/settings'" href="c:\Users\USUARIO\Downloads\setting.png">
+                <img src="/assets/setting.png" class="img2">
+                <h2>Config.</h2>
+            </div>
+            <div class="sidebar-text p-b" (click)="logOut()" href="c:\Users\USUARIO\Downloads\terminar.png">
+                <img src="/assets/terminar.png" class="img3">
+                <h2 class="cerrar">Cerrar Sesión</h2>
+            </div>
+
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

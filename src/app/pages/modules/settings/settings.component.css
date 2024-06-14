@@ -1,0 +1,60 @@
+
+.br{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #333, #777);
+    display: flex;
+}
+.icn{
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 50px;
+    right: 100px;
+}
+
+.stitle{
+    position: absolute;
+    display: flex ;
+    top: 50px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+.sorder{
+    width: 50px;
+    padding: 8px;
+}
+
+.swhite{
+    color: white;
+}
+.snaranja{
+    background-color: #fe8330 !important;
+}
+
+.simg1{
+    width: 15px;
+    height: 14px;
+}
+
+
+.block{
+    text-align: center;
+    margin-top: 180px;
+    width: 100%;
+}
+
+.fsize{
+    font-size: 15px;
+}
+
+.s-flex{
+    display: flex;
+    justify-content: center;
+    padding: 30px;  
+}

@@ -7,33 +7,12 @@
     display: flex;
 }
 
-.margin-t-100{
-    margin-top: 160px !important;
-}
-
 .w-100{
     width: 100%;
     margin: 0 auto;
     align-content: center;
-}
-
-.img30{
-    width: 50px;
-}
-
-.order{
-    width: 50px;
-    padding: 8px;
-}
-
-.header{
-    position: absolute;
-    display: flex ;
-    top: 50px;
     justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
+    text-align: center;
 }
 
 .top-left{
@@ -46,9 +25,10 @@
    }
 }
 
-.d-flex{
+.vd-flex{
     display: flex;
     justify-content: center;
+    padding: 30px;  
 }
 
 .img1{
@@ -63,6 +43,28 @@
     background-color: #fe8330 !important;
 }
 
+.blue2{
+    color:  rgb(71, 71, 209);
+}
+
+
+.title{
+    position: absolute;
+    display: flex ;
+    top: 50px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+
+
+.vorder{
+    width: 50px;
+    padding: 8px;
+}
+
 .td,th{
     padding: 20px;
 
@@ -72,13 +74,20 @@
     color: white;
 }
 
+.purple{
+    color:rgb(207, 14, 207)
+}
+
+.fzise{
+    font-size: 14px;
+}
+
 .margin{
     margin-top: 30px;
 }
 
 .center{
-    text-align: center;
-    
+    text-align: center;  
 
 }
 
@@ -99,4 +108,10 @@ mat-sidenav{
 mat-sidenav-container{
     height: 100%;
     background-color: transparent;
+}
+
+
+.p-b{
+    position: absolute;
+    bottom: 10px;
 }

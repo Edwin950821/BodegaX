@@ -1,8 +1,62 @@
-<div class="bg" >
-    <mat-sidenav-container>
-        <mat-sidenav mode="side" opened="true" class="sidenav">
-            Hola
-        </mat-sidenav>
-    </mat-sidenav-container>
+<div class="bg">
+    <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
+    <img src="/assets/icon.png" class="icon">
+
+    <div class="center header"  >
+        <img src="/assets/venta.png" class="iorder img30"> 
+        <h1 class="order, white"> Venta</h1>
+     </div>
+
+    
+    <div class="w-100 white ">
+
+       
+        <div class="center margin-t-100">
+            <b>Numero de cajas Vendidas</b>
+            <h1>15</h1>
+            <button (click)="solicitarCajas()" mat-raised-button color="primary" class="blue">Vender Cajas</button>
+        </div>
+
+        <div class="center margin">
+            <p>Detalles</p>
+        </div>
+        <div class="d-flex">
+            <table>
+                <tr>
+                    <th> Marca </th>
+                    <th> Cantidad (cajas) </th>
+                </tr>
+                <tr class="center">
+                    <td> Aguila </td>
+                    <td> 4 </td>
+                </tr>
+                <tr class="center">
+                    <td> Butweiser </td>
+                    <td> 6 </td>
+                </tr>
+
+                <tr class="center, green">
+                    <th>Total</th>
+                    <th>$800.000</th>
+                </tr>
+
+
+            </table>
+
+        </div>
+
+        
+
+        <div class="center">
+            <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet"
+                href="c:\Users\USUARIO\Downloads\terminar.png">
+                <img src="/assets/terminar.png" class="img1"> Terminar Jornada
+            </button>
+
+        </div>
+
+    </div>
+
+   
 
 </div>
