@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'settings', loadChildren: () => import('./pages/modules/settings/settings.module').then(m => m.SettingsModule) },
   { path: 'history', loadChildren: () => import('./pages/modules/history/history.module').then(m => m.HistoryModule) },
   { path: 'view', loadChildren: () => import('./pages/modules/view/view.module').then(m => m.ViewModule) },
-  { path: 'hsale', loadChildren: () => import('./pages/module/hsale/hsale.module').then(m => m.HsaleModule) }
+  { path: 'hsale', loadChildren: () => import('./pages/module/hsale/hsale.module').then(m => m.HsaleModule) },
+  { path: 'register', loadChildren: () => import('./pages/modules/register/register.module').then(m => m.RegisterModule) }
 ];
 
 @NgModule({

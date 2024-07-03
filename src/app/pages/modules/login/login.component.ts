@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MessageDialog } from '../../../shared/util/confirm/dialog-message';
 import { Router } from '@angular/router';
 import { AppService } from '../../../app.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +11,15 @@ import { AppService } from '../../../app.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+home() {
+throw new Error('Method not implemented.');
+}
 
   username = ''
   password =''
-
-  users = [
-    {name: 'El master', role: 'admin', username: 'ElMaster', password: '12345'},
-    {name: 'La primavera', role: 'user', username: 'LaPrimavera', password: '12345'}
-  ]
+ 
   
-  constructor(private dialog: MatDialog, private router: Router, private appSvc: AppService){
+  constructor(private dialog: MatDialog, private router: Router, private appSvc: AppService, private http:HttpClient){
 
   }
   
@@ -32,25 +32,37 @@ export class LoginComponent {
       })
       return
     }
-    var userfound = this.users.find(user => user.username == this.username)
-    if(userfound == undefined){
+    
+    this.http.post("http://localhost:8080/admin/login", {
+      username: this.username,
+      password: this.password
+    }).subscribe(res=>{
+      if(res){
+        this.appSvc.logIn(res)
+      }
+    }, error=>{
+      console.log(error)
       this.dialog.open(MessageDialog, {
         data:{
-          title: "Este usuario no existe"
+          title: "Credenciales invalidas"
+        }
+      })
+    })
+  }
+
+  register (){
+    if(this.username=='' || this.password=='' ){
+      this.dialog.open(MessageDialog, {
+        data:{
+          title: "Hay campos vacios"
         }
       })
       return
-    }else{
-      if(userfound.password == this.password){
-        this.appSvc.logIn(userfound)
-      }else{
-        this.dialog.open(MessageDialog, {
-          data:{
-            title: "Contraseña incorrecta"
-          }
-        })
-      }
     }
+  
+
+   
+  
   }
 
 }

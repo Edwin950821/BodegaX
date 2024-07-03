@@ -9,6 +9,7 @@
     align-items: center;
     background-image: url("/assets/fondo.jpeg");
     background-size: cover;
+    overflow-y: auto;
 }
 
 .img{
@@ -29,6 +30,7 @@
     border: 2px solid darkgray;
     backdrop-filter: blur(200px);
     border-radius: 25px;
+    margin: 1rem;
 }
 
 .padding{
@@ -44,5 +46,3 @@
         align-items: center !important;
     } 
 }
-
-
