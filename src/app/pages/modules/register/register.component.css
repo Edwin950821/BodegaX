@@ -33,6 +33,31 @@
     margin: 1rem;
 }
 
+.forg{
+    font-size: 10px;
+    margin: -5px, 0px, 20px, 5px;
+    position:  relative !important;
+    margin: 6px;
+}
+
+.card{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid  #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.message{
+margin-top: -23px;
+font-size: 10px;
+font-weight: bold;
+}
+
 .padding{
     padding: 20px;
     flex-wrap: wrap;
