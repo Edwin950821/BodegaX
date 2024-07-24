@@ -36,14 +36,14 @@
                     <mat-label>
                         Direccion
                     </mat-label>
-                    <input matInput [(ngModel)]="address">
+                    <input matInput autocomplete="off" [(ngModel)]="address">
                 </mat-form-field>
 
                 <mat-form-field class="mini">
                     <mat-label>
                         Contraseña
                     </mat-label>
-                    <input type="password" matInput [(ngModel)]="password">
+                    <input type="password" autocomplete="new-password" matInput [(ngModel)]="password">
                 </mat-form-field>
 
                 <mat-form-field class="mini">
@@ -56,7 +56,7 @@
             </div>
 
             <div>
-                <button [routerLink]="'/register'" mat-raised-button class="orange"
+                <button (click)="register()" mat-raised-button class="orange"
                     rel="stylesheet">Registrarse</button>
             </div>
 
