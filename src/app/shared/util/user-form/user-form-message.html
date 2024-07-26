@@ -1,0 +1,67 @@
+<div>
+    <mat-dialog-content>
+        <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
+            close
+        </mat-icon>
+        
+        <div class="padding">
+
+            <mat-form-field class="mini">
+
+              
+
+                <mat-label>
+                    Nombre Del Negocio
+                </mat-label>
+                <input matInput [(ngModel)]="username">
+
+            </mat-form-field>
+
+            <p class="message">
+                *Tenga en cuenta que los nombres de usuario deben ser pegados y cada letra de inicio del nombre
+                debe ser mayuscula, Eje: ElMaster
+            </p>
+
+
+
+
+            <mat-form-field class="mini">
+                <mat-label>
+                    Documento
+                </mat-label>
+                <input matInput [(ngModel)]="id">
+            </mat-form-field>
+
+            <mat-form-field class="mini">
+                <mat-label>
+                    Direccion
+                </mat-label>
+                <input matInput autocomplete="off" [(ngModel)]="address">
+            </mat-form-field>
+
+            <mat-form-field class="mini">
+                <mat-label>
+                    Contraseña
+                </mat-label>
+                <input type="password" autocomplete="new-password" matInput [(ngModel)]="password">
+            </mat-form-field>
+
+            <mat-form-field class="mini">
+                <mat-label>
+                    Confirmar Contraseña
+                </mat-label>
+                <input type="password" matInput [(ngModel)]="conpassword">
+            </mat-form-field>
+
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        
+        <div>
+            <button (click)="register()" mat-raised-button class="orange"
+                rel="stylesheet">Registrarse</button>
+        </div>
+
+    </mat-dialog-actions>
+</div>

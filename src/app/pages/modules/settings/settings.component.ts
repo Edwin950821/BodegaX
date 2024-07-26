@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UserFormDialog } from '../../../shared/util/user-form/user-form-message';
 
 @Component({
   selector: 'app-settings',
@@ -6,17 +8,21 @@ import { Component } from '@angular/core';
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
-form(): import("@angular/forms").FormGroup<any> {
-throw new Error('Method not implemented.');
-}
 
-  guardar(){
+  constructor(private dialog:MatDialog) { }
+
+
+  form(): import("@angular/forms").FormGroup<any> {
+    throw new Error('Method not implemented.');
+  }
+
+  guardar() {
 
   }
 
-  crear(){
-    
+  crear() {
+    this.dialog.open(UserFormDialog)
   }
 
-  
+
 }
