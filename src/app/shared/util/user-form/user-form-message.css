@@ -34,9 +34,7 @@ p{
   }
 }
 
-.pink{
-  background-color: #ffd5de;
-}
+
 
 .green{
   background-color: #6add8e;
@@ -46,6 +44,49 @@ p{
   color: red !important;
 }
 
-.bgreen{
-  color: green !important;
+.ublue{
+  background-color: #3b37f3 !important;
+  color: aliceblue;
+}
+
+
+
+.utransparent{
+  padding: 0px;
+  background-color: transparent;
+  border: 2px solid darkgray;
+  backdrop-filter: blur(200px);
+  border-radius: 4px;
+  height: 500px;
+ 
+}
+
+.ucenter{
+  text-align: center;
+  margin-top: 50px;
+  
+}
+
+.umini{
+  margin: 10px;
+  height: 70px;
+  .mdc-text-field{
+      align-items: center !important;
+  } 
+  
+}
+
+.center-button{
+  padding: 10px,20px;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+p-user{
+  padding: 20px;
+}
+
+.umessage{
+  font-size: 10px;
 }

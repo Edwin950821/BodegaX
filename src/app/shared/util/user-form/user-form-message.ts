@@ -1,6 +1,6 @@
 import { Component, Inject } from "@angular/core";
 import { FormBuilder, FormsModule } from "@angular/forms";
-import { MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "../../../material.module";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
@@ -24,7 +24,9 @@ export class UserFormDialog {
   conpassword=''
   id=''
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private dialog: MatDialog,private navegacion:Router, private http: HttpClient, private appSvc: AppService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, 
+  private dialog: MatDialog,private navegacion:Router, private http: HttpClient, 
+  private appSvc: AppService, private mydialog:MatDialogRef<UserFormDialog>) {
    
 
     
@@ -68,6 +70,8 @@ export class UserFormDialog {
             title: "Cliente Creado Con Exito"
           }
         })
+
+        this.mydialog.close()
       }
     })
   }

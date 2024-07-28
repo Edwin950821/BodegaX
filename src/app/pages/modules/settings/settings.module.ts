@@ -11,6 +11,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { AppComponent } from '../../../app.component';
 import { RouterOutlet } from '@angular/router';
 import { last } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { last } from 'rxjs';
     MaterialModule,
     FormsModule, 
     RouterOutlet,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
 
 

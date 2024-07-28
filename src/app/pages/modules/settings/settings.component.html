@@ -38,44 +38,18 @@
 
 
 
-                    <tr class="center swhite checkbox" formControlName="employeesCount">
+                    <tr *ngFor="let usuario of usuarios" class="center swhite checkbox">
 
                         <div>
                             <input type="checkbox">
                         </div>
 
-                        <td> Pacamar </td>
+                        <td> {{usuario.nombre}} </td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <img src="/assets/edit.png" class="s-img">
                         <img src="/assets/trash.png" class="s-img">
 
                     </tr>
-
-
-                    <tr class="center swhite checkbox">
-                        <div>
-                            <input type="checkbox">
-                        </div>
-                        <td> La Primavera </td>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td class="s-flex">
-
-                            <img src="/assets/edit.png" class="s-img">
-                            <img src="/assets/trash.png" class="s-img">
-
-
-                        </td>
-                    </tr>
-
-
-
-
-                    <tr class="center, green">
-                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
-                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                    </tr>
-
 
 
                 </table>
