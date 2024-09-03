@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { MessageDialog } from '../../../shared/util/confirm/dialog-message';
+import { MessageDialog } from '../../../shared/util/dialog/dialog-message';
 import { AppService } from '../../../app.service';
 import { Dialog } from '@angular/cdk/dialog';
 import { Title } from '@angular/platform-browser';

@@ -46,8 +46,8 @@
 
                         <td> {{usuario.nombre}} </td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                        <img src="/assets/edit.png" class="s-img">
-                        <img src="/assets/trash.png" class="s-img">
+                        <img src="/assets/edit.png" class="s-img" (click)="editar(usuario)">
+                        <img src="/assets/trash.png" class="s-img" (click)="eliminar(usuario)">
 
                     </tr>
 

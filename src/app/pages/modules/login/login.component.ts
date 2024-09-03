@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MessageDialog } from '../../../shared/util/confirm/dialog-message';
+import { MessageDialog } from '../../../shared/util/dialog/dialog-message';
 import { Router } from '@angular/router';
 import { AppService } from '../../../app.service';
 import { HttpClient } from '@angular/common/http';
