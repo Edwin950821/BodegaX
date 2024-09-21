@@ -1,0 +1,51 @@
+p{
+  margin: 1rem 0px;
+}
+
+.blacked{
+  color: black !important;
+}
+
+.whited{
+  white-space: pre-line;
+}
+
+.dialog{
+  width: 14cm;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .dialog{
+    width: 8cm;
+    text-align: center;
+  }
+}
+
+.dialog-mini{
+  width: 6cm;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .dialog-mini{
+    width: 6cm;
+    text-align: center;
+  }
+}
+
+.pink{
+  background-color: #ffd5de;
+}
+
+.green{
+  background-color: #6add8e;
+}
+
+.bpink{
+  color: red !important;
+}
+
+.bgreen{
+  color: green !important;
+}

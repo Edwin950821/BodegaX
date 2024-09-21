@@ -8,7 +8,7 @@ import { MaterialModule } from '../../../material.module';
 import { CheckLoginGuard } from '../../../shared/guard/check-login.guard';
 import { CheckboxComponent } from '../../../checkbox/checkbox.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from '../../../app.component';
+import { MainComponent } from '../../../app.component';
 import { RouterOutlet } from '@angular/router';
 import { last } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,9 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     RouterOutlet,
     ReactiveFormsModule,
     HttpClientModule
-
-
-
   ]
 })
 export class SettingsModule { 
