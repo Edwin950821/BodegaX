@@ -1,15 +1,21 @@
-<div [class]="class">
+<div [class]="class"> <!-- Asigna dinámicamente clases al div según la propiedad 'class' del componente. -->
     <mat-dialog-content>
+        <!-- Contenido del diálogo -->
         <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
             close
         </mat-icon>
+        <!-- Icono de cierre del diálogo, que al hacer clic lo cierra. Se posiciona en la esquina superior derecha. -->
+
         <p class="whited" [ngClass]="(color=='pink' || color=='green')? 'blacked':'whited'">
-           {{title}}
+            {{title}}
+            <!-- Muestra el título del diálogo. La clase aplicada se determina según el color especificado: 'blacked' si el color es rosa o verde, de lo contrario se aplica 'whited'. -->
         </p>
     </mat-dialog-content>
+
     <mat-dialog-actions align="end">
+        <!-- Sección para los botones de acción del diálogo -->
         <button [class]="bColor" mat-button cdkFocusInitial [mat-dialog-close]="true">
-            OK
+            OK <!-- Botón que cierra el diálogo al hacer clic, se le asigna una clase dinámica según 'bColor'. -->
         </button>
     </mat-dialog-actions>
 </div>

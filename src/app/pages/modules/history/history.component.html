@@ -1,57 +1,74 @@
+<!-- Contenedor principal con un fondo de gradiente (clase hbr) -->
 <div class="hbr">
 
+    <!-- Imagen ícono en la esquina superior derecha (clase hsicn) -->
     <img src="/assets/icon.png" class="hsicn">
 
+    <!-- Tarjeta de Angular Material con fondo transparente -->
     <mat-card class="transparent">
 
+        <!-- Contenido de la tarjeta, centrado tanto vertical como horizontalmente -->
         <mat-card-content class="center">
 
+            <!-- Título de la sección, centrado horizontalmente con flexbox -->
             <div class="hstitle">
+                <!-- Imagen ícono al lado del título -->
                 <img src="/assets/historial.png" class="hsorder">
+                <!-- Texto del título "Historial", en color blanco (hswhite) -->
                 <h1 class="hswhite"> Historial </h1>
             </div>
 
+            <!-- Contenedor para alinear el contenido al centro con un ancho del 100% -->
             <div class="hs-100">
 
+                <!-- Contenedor flexible que organiza los elementos de la tabla -->
                 <div class="hs-flex">
+                    <!-- Tabla que muestra el historial de ventas -->
                     <table>
+                        <!-- Fila de encabezado de la tabla -->
                         <tr>
-                            <th> Cliente </th>
-                            <th> Pedido </th>
-                            <th>Cantidad(cajas)</th>
-                            <th>Fecha Y Hora</th>
-                        </tr>
-                        <tr class="hscenter hswhite">
-                            <td> Pacamar </td>
-                            <td> Aguila </td>
-                            <td>2 </td>
-                            <td>12/06/2024 05:57pm</td>
-                        </tr>
-                        <tr class="hscenter hswhite">
-                            <td> La primavera </td>
-                            <td paddig="20px"> Costeña </td>
-                            <td>3</td>
-                            <td>12/06/2024 06:15pm</td>
+                            <th> Cliente </th> <!-- Columna para el nombre del cliente -->
+                            <th> Total </th>    <!-- Columna para el total de la venta -->
+                            <th> Fecha </th>    <!-- Columna para la fecha de la venta -->
+                            <th></th>           <!-- Columna vacía (para espaciar la ultima columna) -->
                         </tr>
 
+                        <!-- Fila que se repetirá para cada elemento de 'history' con la directiva *ngFor -->
+                        <tr *ngFor="let venta of history" class="hswhite hscenter">
+                            <!-- Muestra el nombre del cliente -->
+                            <td>
+                                {{venta.cliente}}
+                            </td>
+                            <!-- Muestra el total de la venta -->
+                            <td>
+                                {{venta.total_venta}}
+                            </td>
+                            <!-- Muestra la fecha de la venta -->
+                            <td>
+                                {{venta.fecha}}
+                            </td>
+                            <!-- Enlace para ver más detalles de la venta -->
+                            <td>
+                               <a href="">ver</a>
+                            </td>
+                        </tr>
 
+                        <!-- Fila adicional con un estilo centrado -->
                         <tr class="hscenter, green">
+                            <!-- Espacios entre celdas -->
                             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
                             <th></th>
                             <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         </tr>
 
-
-
                     </table>
 
-                </div>
+                </div> 
 
+            </div> 
 
-            </div>
+        </mat-card-content> 
 
-        </mat-card-content>
+    </mat-card> 
 
-    </mat-card>
-
-</div>
+</div> 

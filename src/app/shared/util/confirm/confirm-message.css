@@ -1,51 +1,66 @@
-p{
+p {
   margin: 1rem 0px;
+  /* Aplica un margen vertical de 1 rem (16 píxeles por defecto) arriba y abajo de todos los elementos <p> (párrafos). */
 }
 
-.blacked{
+.blacked {
   color: black !important;
+  /* Establece el color del texto a negro, usando !important para asegurarse de que esta regla tenga prioridad sobre otras reglas que puedan aplicarse. */
 }
 
-.whited{
+.whited {
   white-space: pre-line;
+  /* Mantiene los saltos de línea en el texto, permitiendo que se muestren los espacios y saltos de línea como están en el código. */
 }
 
-.dialog{
+.dialog {
   width: 14cm;
+  /* Establece el ancho de los elementos con la clase .dialog a 14 cm. */
   text-align: center;
+  /* Centra el texto dentro de los elementos con la clase .dialog. */
 }
 
 @media screen and (max-width: 750px) {
-  .dialog{
+  .dialog {
     width: 8cm;
+    /* Para pantallas con un ancho máximo de 750px, el ancho de los elementos con la clase .dialog se establece en 8 cm. */
     text-align: center;
+    /* Asegura que el texto siga estando centrado. */
   }
 }
 
-.dialog-mini{
+.dialog-mini {
   width: 6cm;
+  /* Establece el ancho de los elementos con la clase .dialog-mini a 6 cm. */
   text-align: center;
+  /* Centra el texto dentro de los elementos con la clase .dialog-mini. */
 }
 
 @media screen and (max-width: 750px) {
-  .dialog-mini{
+  .dialog-mini {
     width: 6cm;
+    /* Mantiene el ancho de 6 cm para los elementos con la clase .dialog-mini en pantallas pequeñas. */
     text-align: center;
+    /* Asegura que el texto siga estando centrado. */
   }
 }
 
-.pink{
+.pink {
   background-color: #ffd5de;
+  /* Establece un color de fondo rosa claro (#ffd5de) para los elementos con la clase .pink. */
 }
 
-.green{
+.green {
   background-color: #6add8e;
+  /* Establece un color de fondo verde claro (#6add8e) para los elementos con la clase .green. */
 }
 
-.bpink{
+.bpink {
   color: red !important;
+  /* Establece el color del texto a rojo, usando !important para asegurarse de que esta regla tenga prioridad. */
 }
 
-.bgreen{
+.bgreen {
   color: green !important;
+  /* Establece el color del texto a verde, usando !important para asegurarse de que esta regla tenga prioridad. */
 }

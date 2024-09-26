@@ -1,48 +1,81 @@
-.bg{
+/* Clase .bg para crear un fondo de pantalla fijo y centrado */
+.bg {
     width: 100%;
+    /* El fondo ocupa el 100% del ancho de la ventana */
     height: 100%;
+    /* El fondo ocupa el 100% de la altura de la ventana */
     position: fixed;
+    /* Fija el fondo en la pantalla, no se desplaza con el contenido */
     top: 0;
+    /* Posición superior, alineada con el borde superior de la pantalla */
     left: 0;
+    /* Posición izquierda, alineada con el borde izquierdo de la pantalla */
     display: flex;
+    /* Usar flexbox para centrar el contenido dentro de este elemento */
     justify-content: center;
+    /* Centra el contenido horizontalmente */
     align-items: center;
+    /* Centra el contenido verticalmente */
     background-image: url("/assets/fondo.jpeg");
+    /* Define una imagen de fondo */
     background-size: cover;
+    /* La imagen de fondo cubrirá todo el área disponible */
 }
 
-.img{
+/* Clase .img para definir el tamaño de la imagen */
+.img {
     width: 100px;
+    /* Fija el ancho de las imágenes a 100px */
 }
 
-.center{
+/* Clase .center para centrar el texto */
+.center {
     text-align: center;
+    /* Centra el texto horizontalmente */
 }
 
-.orange{
-   background-color: rgb(255, 130, 4) !important;
-   color: aliceblue !important;
+/* Clase .orange para aplicar un color de fondo naranja y texto blanco */
+.orange {
+    background-color: rgb(255, 130, 4) !important;
+    /* Fondo naranja, usando el modificador !important para tener prioridad sobre otros estilos */
+    color: aliceblue !important;
+    /* Color del texto en blanco, también con prioridad alta */
 }
-.transparent{
+
+/* Clase .transparent para elementos con fondo transparente y estilo de borde */
+.transparent {
     padding: 0px;
+    /* Sin relleno dentro del contenedor */
     background-color: transparent;
+    /* Fondo transparente */
     border: 2px solid darkgray;
+    /* Borde gris oscuro de 2px */
     backdrop-filter: blur(200px);
+    /* Aplica un efecto de desenfoque al fondo del contenedor */
     border-radius: 25px;
+    /* Esquinas redondeadas con un radio de 25px */
 }
 
-.padding{
+/* Clase .padding para aplicar espaciado interno y ajustar el diseño */
+.padding {
     padding: 20px;
+    /* Añade un relleno interno de 20px alrededor del contenido */
     flex-wrap: wrap;
+    /* Permite que los elementos dentro del contenedor se ajusten a varias líneas si es necesario */
     gap: 20px;
+    /* Espaciado de 20px entre los elementos */
     max-width: 300px;
+    /* Ancho máximo de 300px para el contenedor */
 }
 
-.mini{
+/* Clase .mini para un diseño compacto con altura reducida */
+.mini {
     height: 70px;
-    .mdc-text-field{
+    /* Establece la altura del elemento en 70px */
+
+    /* Estilo adicional para un campo de texto */
+    .mdc-text-field {
         align-items: center !important;
-    } 
+        /* Alinea el contenido de los campos de texto en el centro verticalmente */
+    }
 }
-
-

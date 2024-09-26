@@ -1,31 +1,58 @@
+<!-- Contenedor principal con la clase .bg que aplica un fondo de pantalla fijo -->
 <div class="bg">
+
+    <!-- Tarjeta (card) con fondo transparente -->
     <mat-card class="transparent">
+
+        <!-- Contenido centrado dentro de la tarjeta -->
         <mat-card-content class="center">
+
+            <!-- Título principal del formulario de login -->
             <h1>Login</h1>
+
+            <!-- Imagen dentro del formulario, mostrando un logo o ícono -->
             <img src="/assets/bodegax.png" class="img">
+
+            <!-- Divisor para separar visualmente los elementos del formulario -->
             <mat-divider class="dark"></mat-divider>
+
+            <!-- Contenedor con relleno para los campos de entrada (usuario y contraseña) y el botón -->
             <div class="padding">
+
+                <!-- Campo de entrada para el nombre de usuario -->
                 <mat-form-field class="mini">
                     <mat-label>
-                        Usuario
+                        Usuario <!-- Etiqueta para el campo de usuario -->
                     </mat-label>
+                    <!-- Entrada de texto enlazada al modelo "username" con two-way data binding -->
                     <input matInput [(ngModel)]="username">
                 </mat-form-field>
+
+                <!-- Campo de entrada para la contraseña -->
                 <mat-form-field class="mini">
                     <mat-label>
-                        Contraseña
+                        Contraseña <!-- Etiqueta para el campo de contraseña -->
                     </mat-label>
+                    <!-- Entrada de tipo "password" enlazada al modelo "password" -->
                     <input type="password" matInput [(ngModel)]="password">
-                </mat-form-field>  
+                </mat-form-field>
 
-                <button (click)="login()" mat-raised-button color="primary" class="blue">Iniciar sesion</button>
+                <!-- Botón para iniciar sesión, con un evento (click) que llama al método login() -->
+                <button (click)="login()" mat-raised-button color="primary" class="blue">
+                    Iniciar sesion <!-- Texto del botón de iniciar sesión -->
+                </button>
 
             </div>
 
+            <!-- Contenedor para el botón de registro -->
             <div>
-                <button [routerLink]="'/register'" mat-raised-button class="orange" rel="stylesheet">Registrarse</button>
+                <!-- Botón que redirige al usuario a la página de registro cuando se hace clic -->
+                <button [routerLink]="'/register'" mat-raised-button class="orange" rel="stylesheet">
+                    Registrarse <!-- Texto del botón de registro -->
+                </button>
             </div>
 
-        </mat-card-content>
-    </mat-card>
-</div>
+        </mat-card-content> <!-- Fin del contenido de la tarjeta -->
+    </mat-card> <!-- Fin de la tarjeta -->
+
+</div> <!-- Fin del contenedor principal -->

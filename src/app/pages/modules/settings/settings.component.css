@@ -1,82 +1,118 @@
-
-.br{
+.br {
     top: 0;
+    /* Posiciona el elemento en la parte superior del contenedor */
     left: 0;
+    /* Posiciona el elemento a la izquierda del contenedor */
     width: 100%;
+    /* Ancho del elemento se extiende al 100% del contenedor padre */
     height: 120%;
+    /* Altura del elemento se extiende al 120% del contenedor padre, lo que podría provocar un desbordamiento */
     background-image: linear-gradient(to right, #333, #777);
+    /* Aplica un fondo con un degradado lineal de gris oscuro a gris claro */
     background-size: contain;
+    /* Asegura que la imagen de fondo se ajuste dentro del contenedor sin cortarse */
     display: flex;
+    /* Utiliza flexbox para alinear los hijos del contenedor */
 }
-.icn{
+
+.icn {
     position: absolute;
+    /* Posiciona el icono de manera absoluta respecto al contenedor padre */
     width: 30px;
+    /* Establece el ancho del icono */
     height: 20px;
+    /* Establece la altura del icono */
     top: 50px;
+    /* Coloca el icono a 50px desde la parte superior */
     right: 100px;
+    /* Coloca el icono a 100px desde la derecha */
 }
 
-.stitle{
+.stitle {
     position: absolute;
-    display: flex ;
-    top: 50px;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-}
-
-.sorder{
-    width: 50px;
-    padding: 8px;
-}
-
-.swhite{
-    color: white;
-}
-
-.checkbox{
-    width: 30px;
-    height: 14px;
-    padding: 20px;
-   position: relative !important;
-}
-
-
-
-.snaranja{
-    background-color: #fe8330 !important;
-}
-
-.sazul{
-    background-color: #2f2ce9 !important;
-}
-
-.simg1{
-    width: 15px;
-    height: 14px;
-}
-
-
-.block{
-    text-align: center;
-    margin-top: 180px;
-    width: 100%;
-}
-
-.fsize{
-    font-size: 15px;
-}
-
-.s-flex{
+    /* Posiciona el título de manera absoluta dentro del contenedor */
     display: flex;
+    /* Utiliza flexbox para alinear los elementos dentro del título */
+    top: 50px;
+    /* Coloca el título a 50px desde la parte superior */
     justify-content: center;
-    padding: 30px; 
-     
+    /* Centra el contenido horizontalmente */
+    left: 50%;
+    /* Coloca el título en el centro del contenedor horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el desplazamiento del título hacia la izquierda para centrarlo */
+    align-items: center;
+    /* Centra el contenido verticalmente */
 }
 
-.s-img{
+.sorder {
+    width: 50px;
+    /* Establece el ancho del elemento de orden */
+    padding: 8px;
+    /* Aplica un padding de 8px alrededor del elemento */
+}
+
+.swhite {
+    color: white;
+    /* Establece el color del texto a blanco */
+}
+
+.checkbox {
+    width: 30px;
+    /* Establece el ancho de la casilla de verificación */
+    height: 14px;
+    /* Establece la altura de la casilla de verificación */
+    padding: 20px;
+    /* Aplica un padding de 20px alrededor del elemento */
+    position: relative !important;
+    /* Posiciona el checkbox de manera relativa y usa !important para forzar esta propiedad */
+}
+
+.snaranja {
+    background-color: #fe8330 !important;
+    /* Establece el fondo a un color naranja brillante y usa !important para forzar esta propiedad */
+}
+
+.sazul {
+    background-color: #1576C4 !important;
+    /* Establece el fondo a un color azul y usa !important para forzar esta propiedad */
+}
+
+.simg1 {
+    width: 15px;
+    /* Establece el ancho de la imagen */
+    height: 14px;
+    /* Establece la altura de la imagen */
+}
+
+.block {
+    text-align: center;
+    /* Centra el texto dentro del bloque */
+    margin-top: 180px;
+    /* Aplica un margen superior de 180px */
+    width: 100%;
+    /* Ancho del bloque se extiende al 100% del contenedor padre */
+}
+
+.fsize {
+    font-size: 15px;
+    /* Establece el tamaño de la fuente a 15px */
+}
+
+.s-flex {
+    display: flex;
+    /* Utiliza flexbox para alinear los hijos del contenedor */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    padding: 30px;
+    /* Aplica un padding de 30px alrededor del contenedor */
+}
+
+.s-img {
     height: 20px;
+    /* Establece la altura de la imagen */
     margin: 6px;
+    /* Aplica un margen de 6px alrededor de la imagen */
     cursor: pointer;
+    /* Cambia el cursor a un puntero cuando se pasa por encima de la imagen, indicando que es interactiva */
 }

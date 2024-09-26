@@ -1,92 +1,116 @@
-p{
+p {
   margin: 1rem 0px;
+  /* Aplica un margen vertical de 1 rem arriba y abajo a todos los párrafos. */
 }
 
-.blacked{
+.blacked {
   color: black !important;
+  /* Establece el color del texto a negro, usando !important para priorizar esta regla. */
 }
 
-.whited{
+.whited {
   white-space: pre-line;
+  /* Mantiene los espacios y saltos de línea en el texto, similar a cómo se renderiza en HTML. */
 }
 
-.dialog{
+.dialog {
   width: 14cm;
+  /* Establece un ancho fijo de 14 cm para los diálogos. */
   text-align: center;
+  /* Centra el texto dentro del diálogo. */
 }
 
 @media screen and (max-width: 750px) {
-  .dialog{
+  .dialog {
     width: 8cm;
+    /* Reduce el ancho del diálogo a 8 cm en pantallas más pequeñas. */
     text-align: center;
+    /* Mantiene el texto centrado. */
   }
 }
 
-.dialog-mini{
+.dialog-mini {
   width: 6cm;
+  /* Establece un ancho fijo de 6 cm para diálogos más pequeños. */
   text-align: center;
+  /* Centra el texto dentro del diálogo mini. */
 }
 
 @media screen and (max-width: 750px) {
-  .dialog-mini{
+  .dialog-mini {
     width: 6cm;
+    /* Mantiene el ancho de 6 cm para diálogos mini en pantallas pequeñas. */
     text-align: center;
+    /* Asegura que el texto esté centrado. */
   }
 }
 
-
-
-.green{
+.green {
   background-color: #6add8e;
+  /* Establece un color de fondo verde claro. */
 }
 
-.bpink{
+.bpink {
   color: red !important;
+  /* Cambia el color del texto a rojo, priorizando esta regla con !important. */
 }
 
-.ublue{
-  background-color: #3b37f3 !important;
+.ublue {
+  background-color: #1576C4 !important;
+  /* Establece un color de fondo azul oscuro, priorizando la regla. */
   color: aliceblue;
+  /* Establece el color del texto a un tono claro de azul (aliceblue). */
 }
 
-
-
-.utransparent{
+.utransparent {
   padding: 0px;
+  /* Sin relleno interno. */
   background-color: transparent;
+  /* Fondo transparente. */
   border: 2px solid darkgray;
+  /* Borde gris oscuro de 2 píxeles. */
   backdrop-filter: blur(200px);
+  /* Aplica un desenfoque de 200 píxeles al fondo. */
   border-radius: 4px;
+  /* Esquinas redondeadas con un radio de 4 píxeles. */
   height: 500px;
- 
+  /* Altura fija de 500 píxeles. */
 }
 
-.ucenter{
+.ucenter {
   text-align: center;
+  /* Centra el texto. */
   margin-top: 50px;
-  
+  /* Aplica un margen superior de 50 píxeles. */
 }
 
-.umini{
+.umini {
   margin: 10px;
+  /* Aplica un margen de 10 píxeles a los elementos con esta clase. */
   height: 70px;
-  .mdc-text-field{
-      align-items: center !important;
-  } 
-  
+
+  /* Establece una altura fija de 70 píxeles. */
+  .mdc-text-field {
+    align-items: center !important;
+    /* Alinea verticalmente al centro los elementos de texto dentro de esta clase. */
+  }
 }
 
-.center-button{
-  padding: 10px,20px;
+.center-button {
+  padding: 10px, 20px;
+  /* Intenta aplicar un relleno de 10 píxeles arriba y abajo y 20 píxeles a los lados (debería usar un espacio en lugar de una coma). */
   font-size: 16px;
+  /* Establece el tamaño de fuente a 16 píxeles. */
   text-align: center;
-
+  /* Centra el texto dentro del botón. */
 }
 
-p-user{
+p-user {
   padding: 20px;
+  /* Aplica un relleno de 20 píxeles alrededor de los elementos con esta clase. */
 }
 
-.umessage{
+.umessage {
   font-size: 10px;
+  /* Establece un tamaño de fuente pequeño de 10 píxeles para los mensajes. */
 }

@@ -1,73 +1,70 @@
-
+<!-- Contenedor principal con un fondo estilizado -->
 <div class="bg">
-    
-    <img src="/assets/icon.png" class="icon" >
 
+    <!-- Icono que se posiciona en la parte superior derecha -->
+    <img src="/assets/icon.png" class="icon">
+
+    <!-- Tarjeta que contiene el contenido principal, con un fondo transparente -->
     <mat-card class="transparent">
 
+        <!-- Contenido de la tarjeta -->
         <mat-card-content class="content">
 
+            <!-- Título de la sección de pedidos, centrado y con un ícono -->
             <div class="title">
-                <img src="/assets/pedidos.png" class="iorder"> 
-                <h1 class="white">Pedidos</h1>
-             </div>
+                <img src="/assets/pedidos.png" class="iorder"> <!-- Ícono que representa "Pedidos" -->
+                <h1 class="white">Pedidos</h1> <!-- Título principal en color blanco -->
+            </div>
+
+            <!-- Contenedor que ocupa el 100% de ancho y tiene texto blanco -->
             <div class="w-100 white">
-        
+
+                <!-- Contenedor flexible para alinear la tabla -->
                 <div class="d-flex">
                     <table>
+                        <!-- Encabezado de la tabla con las columnas -->
                         <tr>
-                            <th> Cliente </th>
-                            <th> Cantidad (cajas) </th>
-                            <th> Total </th>
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+                            <th> Cliente </th> <!-- Nombre del cliente -->
+                            <th> Cantidad (cajas) </th> <!-- Cantidad de cajas pedidas -->
+                            <th> Total </th> <!-- Total del pedido -->
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th> <!-- Espaciado extra -->
                         </tr>
+                        <!-- Fila de datos del primer pedido -->
                         <tr class="center">
-                            <td> Pacamar </td>
-                            <td> 4 </td>
-                            <td>$240.000</td>
-                            <u  class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'">Ver</u>
+                            <td> Pacamar </td> <!-- Nombre del cliente -->
+                            <td> 4 </td> <!-- Cantidad de cajas -->
+                            <td>$240.000</td> <!-- Total del pedido -->
+                            <u class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'">Ver</u>
+                            <!-- Enlace para ver detalles -->
                         </tr>
+                        <!-- Fila de datos del segundo pedido -->
                         <tr class="center">
-                            <td> La Primavera </td>
-                            <td> 6 </td>
-                            <td>$360.000</td>
-                            <u  class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'" >Ver</u>
-                        </tr> 
-        
-        
+                            <td> La Primavera </td> <!-- Nombre del cliente -->
+                            <td> 6 </td> <!-- Cantidad de cajas -->
+                            <td>$360.000</td> <!-- Total del pedido -->
+                            <u class="purple fzise cursor" (click)="ver()" [routerLink]="'/view'">Ver</u>
+                            <!-- Enlace para ver detalles -->
+                        </tr>
+
+                        <!-- Fila que muestra el total general de pedidos -->
                         <tr class="center, green">
-                            <th>Total </th>
-                            <th>10</th>
-                            <th>$600.000</th>
+                            <th>Total </th> <!-- Total de todos los pedidos -->
+                            <th>10</th> <!-- Cantidad total de cajas -->
+                            <th>$600.000</th> <!-- Total monetario de todos los pedidos -->
                         </tr>
-        
-                        
-        
-                        
-        
-        
                     </table>
-        
                 </div>
-        
+
+                <!-- Contenedor para el botón "Terminar Jornada" -->
                 <div class="center">
-                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet"
-                        href="c:\Users\USUARIO\Downloads\terminar.png">
+                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet">
                         <img src="/assets/terminar.png" class="img1"> Terminar Jornada
+                        <!-- Botón para finalizar la jornada -->
                     </button>
-        
                 </div>
-        
             </div>
-        
 
         </mat-card-content>
 
     </mat-card>
-
-        
-
-     
-   
-
 </div>

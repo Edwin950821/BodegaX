@@ -1,153 +1,151 @@
-.bg{
+/* Clase para un fondo de pantalla completo */
+.bg {
     width: 100%;
+    /* Ocupa todo el ancho de la pantalla */
     height: 100%;
+    /* Ocupa todo el alto de la pantalla */
     position: fixed;
+    /* Fija la posición del fondo */
     top: 0;
     left: 0;
     display: flex;
+    /* Uso de flexbox para alinear el contenido */
     justify-content: center;
+    /* Centra el contenido horizontalmente */
     align-items: center;
+    /* Centra el contenido verticalmente */
     background-image: url("/assets/fondo.jpeg");
+    /* Imagen de fondo */
     background-size: cover;
+    /* Asegura que la imagen cubra todo el área */
 }
 
-.hbr{
+/* Clase para un contenedor con gradiente de fondo */
+.hbr {
     top: 0;
     left: 0;
     width: 100%;
+    /* Ocupa todo el ancho */
     height: 100%;
+    /* Ocupa todo el alto */
     background-image: linear-gradient(to right, #333, #777);
+    /* Gradiente de izquierda a derecha */
     display: flex;
+    /* Flexbox para centrar el contenido */
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
 }
 
-
-.hs-100{
+/* Clase para centrar contenido horizontalmente dentro de un contenedor */
+.hs-100 {
     width: 100%;
+    /* Ocupa todo el ancho */
     margin: 0 auto;
+    /* Centrado horizontal */
     align-content: center;
+    /* Centrado vertical */
 }
 
-
-.hsicn{
+/* Clase para posicionar un ícono */
+.hsicn {
     position: absolute;
+    /* Posiciona el ícono de manera absoluta en relación a su contenedor */
     width: 30px;
     height: 20px;
     top: 50px;
+    /* Se posiciona a 50px desde la parte superior */
     right: 100px;
+    /* Se posiciona a 100px desde la derecha */
 }
 
-.hstitle{
+/* Clase para centrar un título */
+.hstitle {
     position: absolute;
-    display: flex ;
+    /* Posiciona el título de manera absoluta */
+    display: flex;
+    /* Flexbox para facilitar la alineación */
     top: 50px;
+    /* Posicionado a 50px desde arriba */
     justify-content: center;
+    /* Centra el contenido horizontalmente */
     left: 50%;
+    /* Se mueve al 50% del ancho de la pantalla */
     transform: translateX(-50%);
+    /* Corrige el desplazamiento para que esté perfectamente centrado */
     align-items: center;
+    /* Centra verticalmente */
 }
 
-
-.hsorder{
+/* Clase para definir el ancho y el espaciado de un contenedor */
+.hsorder {
     width: 50px;
+    /* Ancho del contenedor */
     padding: 8px;
+    /* Relleno interno de 8px */
 }
 
-.hswhite{
+/* Clase para aplicar color blanco al texto */
+.hswhite {
     color: white;
 }
 
-.hssize{
+/* Clase para el tamaño de fuente */
+.hssize {
     font-size: 15px;
+    /* Tamaño de fuente de 15px */
 }
 
-.hscenter{
-    text-align: center;  
-
+/* Clase para alinear texto al centro */
+.hscenter {
+    text-align: center;
+    /* Alineación centrada */
 }
 
-.hs-flex{
+/* Clase para un contenedor flexible y centrado */
+.hs-flex {
     display: flex;
+    /* Usa flexbox */
     justify-content: center;
-    padding: 30px;  
-}   
-
-.hbr{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, #333, #777);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Centrado horizontal */
+    padding: 30px;
+    /* Relleno de 30px */
 }
 
+/* Repetición de las clases .hbr, .h-100, .hicn, .htitle, .horder, .hwhite, .hsize, .hcenter, .h-flex */
+/* Estas clases parecen duplicadas, pero con el prefijo 'h' en lugar de 'hs'. Tienen las mismas funcionalidades, pero estan destinadas a diferentes secciones del diseño */
 
-.h-100{
-    width: 100%;
-    margin: 0 auto;
-    align-content: center;
-}
-
-
-.hicn{
-    position: absolute;
-    width: 30px;
-    height: 20px;
-    top: 50px;
-    right: 100px;
-}
-
-.htitle{
-    position: absolute;
-    display: flex ;
-    top: 50px;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-}
-
-
-.horder{
-    width: 50px;
-    padding: 8px;
-}
-
-.hwhite{
-    color: white;
-}
-
-.hsize{
-    font-size: 15px;
-}
-
-.hcenter{
-    text-align: center;  
-
-}
-
-.h-flex{
-    display: flex;
-    justify-content: center;
-    padding: 30px;  
-}
-
-
-
-.transparent{
+/* Clase para hacer el fondo transparente y aplicar un filtro de desenfoque */
+.transparent {
     padding: 0px;
+    /* Sin relleno interno */
     background-color: transparent;
+    /* Fondo transparente */
     border: 2px solid darkgray;
+    /* Borde sólido de 2px y color gris oscuro */
     backdrop-filter: blur(200px);
+    /* Filtro de desenfoque aplicado al fondo */
     border-radius: 25px;
+    /* Bordes redondeados */
     height: 500px;
-   
+    /* Altura fija de 500px */
 }
 
-.center{
+/* Clase para centrar contenido tanto vertical como horizontalmente */
+.center {
     display: flex;
+    /* Uso de flexbox */
     justify-content: center;
+    /* Centrado horizontal */
     align-items: center;
+    /* Centrado vertical */
     height: 100%;
+    /* Ocupa todo el alto del contenedor padre */
+}
+
+/* Estilos para las celdas de tabla (<td>) */
+td {
+    padding: 10px;
+    /* Relleno interno de 10px en las celdas */
 }

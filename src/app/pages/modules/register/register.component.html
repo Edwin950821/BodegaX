@@ -1,63 +1,64 @@
+<!-- Contenedor principal con fondo -->
 <div class="bg">
+
+    <!-- Tarjeta que contiene el formulario, con un fondo transparente -->
     <mat-card class="transparent">
+
+        <!-- Contenido de la tarjeta, centrado -->
         <mat-card-content class="center">
-            <h1>Registro</h1>
+            <h1>Registro</h1> <!-- Título del formulario -->
+
+            <!-- Imagen que acompaña el formulario -->
             <img src="/assets/bodegax.png" class="img">
+
+            <!-- Divisor visual entre el título y el contenido -->
             <mat-divider class="dark"></mat-divider>
-            <div class="padding">
 
+            <div class="padding"> <!-- Contenedor para el formulario -->
+
+                <!-- Campo de entrada para el nombre del negocio -->
                 <mat-form-field class="mini">
-
-                  
-
-                    <mat-label>
-                        Nombre Del Negocio
-                    </mat-label>
-                    <input matInput [(ngModel)]="username">
-
+                    <mat-label>Nombre Del Negocio</mat-label>
+                    <input matInput [(ngModel)]="username"> <!-- Vinculación de datos con el modelo -->
                 </mat-form-field>
 
+                <!-- Mensaje informativo sobre el formato del nombre de usuario -->
                 <p class="message">
                     *Tenga en cuenta que los nombres de usuario deben ser pegados y cada letra de inicio del nombre
                     debe ser mayuscula, Eje: ElMaster
                 </p>
 
-
-
-
+                <!-- Campo de entrada para el documento de identificación -->
                 <mat-form-field class="mini">
-                    <mat-label>
-                        Documento
-                    </mat-label>
-                    <input matInput [(ngModel)]="id">
+                    <mat-label>Documento</mat-label>
+                    <input matInput [(ngModel)]="id"> <!-- Vinculación de datos con el modelo -->
                 </mat-form-field>
 
+                <!-- Campo de entrada para la dirección -->
                 <mat-form-field class="mini">
-                    <mat-label>
-                        Direccion
-                    </mat-label>
-                    <input matInput autocomplete="off" [(ngModel)]="address">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput autocomplete="off" [(ngModel)]="address"> <!-- Desactivación de autocompletar -->
                 </mat-form-field>
 
+                <!-- Campo de entrada para la contraseña -->
                 <mat-form-field class="mini">
-                    <mat-label>
-                        Contraseña
-                    </mat-label>
+                    <mat-label>Contraseña</mat-label>
                     <input type="password" autocomplete="new-password" matInput [(ngModel)]="password">
+                    <!-- Vinculación de datos con el modelo -->
                 </mat-form-field>
 
+                <!-- Campo de entrada para confirmar la contraseña -->
                 <mat-form-field class="mini">
-                    <mat-label>
-                        Confirmar Contraseña
-                    </mat-label>
+                    <mat-label>Confirmar Contraseña</mat-label>
                     <input type="password" matInput [(ngModel)]="conpassword">
+                    <!-- Vinculación de datos con el modelo -->
                 </mat-form-field>
 
             </div>
 
+            <!-- Botón para enviar el formulario de registro -->
             <div>
-                <button (click)="register()" mat-raised-button class="orange"
-                    rel="stylesheet">Registrarse</button>
+                <button (click)="register()" mat-raised-button class="orange" rel="stylesheet">Registrarse</button>
             </div>
 
         </mat-card-content>

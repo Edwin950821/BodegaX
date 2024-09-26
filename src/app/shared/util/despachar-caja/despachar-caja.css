@@ -1,0 +1,87 @@
+p {
+  margin: 1rem 0px;
+  /* Establece un margen superior e inferior de 1 rem para los párrafos, creando espacio alrededor de ellos. */
+}
+
+.blacked {
+  color: black !important;
+  /* Define el color del texto como negro. El uso de !important asegura que esta regla tenga prioridad sobre otras. */
+}
+
+.whited {
+  white-space: pre-line;
+  /* Permite que los espacios en blanco se mantengan y los saltos de línea se respeten, útil para textos formateados. */
+}
+
+.dialog {
+  width: 14cm;
+  /* Asigna un ancho fijo de 14 cm a los diálogos, asegurando que tengan un tamaño consistente. */
+  text-align: center;
+  /* Centra el contenido de texto dentro del diálogo. */
+}
+
+/* Media query para pantallas con un ancho máximo de 750px */
+@media screen and (max-width: 750px) {
+  .dialog {
+    width: 8cm;
+    /* Cambia el ancho del diálogo a 8 cm en dispositivos más pequeños. */
+    text-align: center;
+    /* Mantiene el texto centrado. */
+  }
+}
+
+.dialog-mini {
+  width: 6cm;
+  /* Asigna un ancho fijo de 6 cm a los diálogos mini. */
+  text-align: center;
+  /* Centra el texto dentro de los diálogos mini. */
+}
+
+/* Media query para diálogos mini en pantallas con un ancho máximo de 750px */
+@media screen and (max-width: 750px) {
+  .dialog-mini {
+    width: 6cm;
+    /* Mantiene el ancho de 6 cm en dispositivos más pequeños. */
+    text-align: center;
+    /* Mantiene el texto centrado. */
+  }
+}
+
+.pink {
+  background-color: #ffd5de;
+  /* Define un color de fondo rosa claro. */
+}
+
+.green {
+  background-color: #6add8e;
+  /* Define un color de fondo verde claro. */
+}
+
+.spink {
+  color: red !important;
+  /* Define el color del texto como rojo, asegurando su prioridad con !important. */
+}
+
+.bgreen {
+  color: green !important;
+  /* Define el color del texto como verde, con prioridad. */
+}
+
+.sblue {
+  background-color: #3935E9 !important;
+  /* Establece un color de fondo azul intenso, utilizando !important para asegurar su aplicación. */
+  color: white;
+  /* Establece el color del texto en blanco. */
+}
+
+.margin {
+  margin-right: 30px;
+  /* Aplica un margen derecho de 30 px a los elementos que usan esta clase, creando espacio adicional. */
+}
+
+.scenter {
+  position: center;
+  /* Esta regla no es válida ya que 'center' no es un valor aceptado para la propiedad 'position'. */
+  text-align: center;
+  /* Centra el texto dentro del elemento. */
+}

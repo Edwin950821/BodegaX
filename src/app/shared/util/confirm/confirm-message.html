@@ -1,17 +1,52 @@
 <div [class]="class">
+    <!-- 
+    Este div utiliza la directiva Angular [class] para asignar una clase dinámica al elemento. 
+    La clase se determina a partir de la propiedad "class" del componente.
+    -->
+
     <mat-dialog-content>
+        <!-- Contenido principal del diálogo, parte de Angular Material. -->
+
         <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
+            <!-- 
+            Icono de cierre que permite cerrar el diálogo.
+            Tiene estilos en línea para posicionarlo en la esquina superior derecha del diálogo.
+            El cursor se cambia a "pointer" para indicar que es clickeable.
+            -->
             close
         </mat-icon>
-        <p class="whited" [ngClass]="(color=='pink' || color=='green')? 'blacked':'whited'">
-           {{title}}
+
+        <p class="whited" [ngClass]="(color=='pink' || color=='green') ? 'blacked' : 'whited'">
+            <!-- 
+            Este párrafo muestra el título del diálogo.
+            Utiliza la clase "whited" por defecto, pero cambia a "blacked" si la propiedad "color" es "pink" o "green". 
+            Esto permite adaptar el color del texto según el fondo.
+            -->
+            {{title}}
+            <!-- 
+            El título del diálogo se renderiza aquí. 
+            Se utiliza la interpolación de Angular para insertar el valor de la propiedad "title" del componente.
+            -->
         </p>
     </mat-dialog-content>
+
     <mat-dialog-actions align="end">
+        <!-- Contenedor para las acciones del diálogo, alineadas al final (derecha). -->
+
         <button [class]="bColor" mat-button cdkFocusInitial [mat-dialog-close]="true">
+            <!-- 
+            Botón que cierra el diálogo sin realizar ninguna acción adicional.
+            Utiliza la propiedad "bColor" para establecer una clase dinámica, que puede definir su estilo.
+            La directiva cdkFocusInitial indica que este botón debe recibir el foco inicialmente cuando se abra el diálogo.
+            -->
             Cancelar
         </button>
+
         <button [class]="bColor" mat-button cdkFocusInitial [mat-dialog-close]="true">
+            <!-- 
+            Botón que cierra el diálogo y puede realizar acciones posteriores dependiendo de la implementación.
+            También utiliza "bColor" para la clase y se establece como el botón que debe recibir el foco inicial.
+            -->
             Confirmar
         </button>
     </mat-dialog-actions>

@@ -1,67 +1,78 @@
 <div>
     <mat-dialog-content class="utransparent ">
+        <!-- Contenido del diálogo con un fondo transparente -->
+
         <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
             close
         </mat-icon>
+        <!-- Icono de cierre en la esquina superior derecha del diálogo -->
 
         <div class="ucenter">
+            <!-- Contenedor centrado para alinear elementos en el diálogo -->
 
             <mat-form-field class="umini">
-
-
-
+                <!-- Campo de formulario para la entrada del nombre del negocio -->
                 <mat-label class="umini, p-user">
                     Nombre Del Negocio
                 </mat-label>
                 <input matInput [(ngModel)]="username">
-
+                <!-- Campo de entrada para el nombre del negocio, vinculado a la propiedad 'username' -->
             </mat-form-field>
 
             <p class="umessage">
                 <strong>
-                     *Tenga en cuenta que los nombres de usuario deben ser pegados y cada letra de inicio del nombre
+                    *Tenga en cuenta que los nombres de usuario deben ser pegados y cada letra de inicio del nombre
                     debe ser mayuscula, Eje: ElMaster
                 </strong>
+                <!-- Mensaje de advertencia sobre el formato del nombre de usuario -->
             </p>
 
             <mat-form-field class="umini">
+                <!-- Campo de formulario para la entrada del documento -->
                 <mat-label>
                     Documento
                 </mat-label>
                 <input matInput [(ngModel)]="id">
+                <!-- Campo de entrada para el documento, vinculado a la propiedad 'id' -->
             </mat-form-field>
 
             <mat-form-field class="umini">
+                <!-- Campo de formulario para la entrada de dirección -->
                 <mat-label>
                     Direccion
                 </mat-label>
                 <input matInput autocomplete="off" [(ngModel)]="address">
+                <!-- Campo de entrada para la dirección, vinculado a la propiedad 'address' -->
+                <!-- 'autocomplete="off"' desactiva la función de autocompletar del navegador -->
             </mat-form-field>
 
             <mat-form-field class="umini">
+                <!-- Campo de formulario para la entrada de contraseña -->
                 <mat-label>
                     Contraseña
                 </mat-label>
                 <input type="password" autocomplete="new-password" matInput [(ngModel)]="password">
+                <!-- Campo de entrada para la contraseña, vinculado a la propiedad 'password' -->
+                <!-- 'autocomplete="new-password"' ayuda a mejorar la seguridad evitando que se complete automáticamente -->
             </mat-form-field>
 
             <mat-form-field class="umini">
+                <!-- Campo de formulario para la confirmación de la contraseña -->
                 <mat-label>
                     Confirmar Contraseña
                 </mat-label>
                 <input type="password" matInput [(ngModel)]="conpassword">
+                <!-- Campo de entrada para confirmar la contraseña, vinculado a la propiedad 'conpassword' -->
             </mat-form-field>
 
             <mat-dialog-actions align="center">
-
+                <!-- Acciones del diálogo, centradas -->
                 <div>
                     <button (click)="register()" mat-raised-button class="ublue" rel="stylesheet">Registrarse</button>
+                    <!-- Botón para registrar al usuario, que ejecuta la función 'register()' al hacer clic -->
                 </div>
-
             </mat-dialog-actions>
 
         </div>
-
     </mat-dialog-content>
-
 </div>

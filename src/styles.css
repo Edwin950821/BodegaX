@@ -1,15 +1,29 @@
-body{
+body {
     padding: 0px;
+    /* Elimina cualquier relleno dentro del elemento <body> */
     margin: 0px;
+    /* Elimina el margen por defecto del elemento <body> */
 }
-.blue{
+
+.blue {
     background-color: rgb(11, 112, 194) !important;
+    /* Define un color de fondo azul para elementos con la clase 'blue'; el uso de !important asegura que este estilo prevalezca sobre otros estilos. */
 }
 
-.dark{
+.dark {
     background-color: rgb(73, 71, 71);
+    /* Define un color de fondo oscuro para elementos con la clase 'dark'. */
 }
 
+html,
+body {
+    height: 100%;
+    /* Establece la altura de los elementos <html> y <body> al 100% del viewport, asegurando que ocupen toda la altura de la ventana del navegador. */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+    /* Asegura que no haya márgenes adicionales en el elemento <body>. Esto es redundante, ya que ya se estableció anteriormente, pero refuerza la intención. */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* Define la fuente del documento; se utilizará 'Roboto' como primera opción, y si no está disponible, se intentará con 'Helvetica Neue', y finalmente se usará una fuente sans-serif genérica. */
+}

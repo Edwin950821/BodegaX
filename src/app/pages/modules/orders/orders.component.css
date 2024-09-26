@@ -1,137 +1,220 @@
-.bg{
+/* Estilo para el fondo de la aplicación */
+.bg {
     top: 0;
+    /* Posiciona el elemento en la parte superior */
     left: 0;
+    /* Posiciona el elemento a la izquierda */
     width: 100%;
+    /* El ancho ocupa el 100% del contenedor */
     height: 100%;
+    /* La altura ocupa el 100% del contenedor */
     background-image: linear-gradient(to right, #333, #777);
+    /* Fondo con un degradado de gris oscuro a gris claro */
     display: flex;
+    /* Usa Flexbox para organizar su contenido */
     justify-content: center;
+    /* Centra horizontalmente el contenido */
     align-items: center;
+    /* Centra verticalmente el contenido */
 }
 
-.w-100{
+/* Estilo para un contenedor que ocupa el 100% de ancho */
+.w-100 {
     width: 100%;
+    /* Ancho del contenedor al 100% */
     margin: 0 auto;
+    /* Centra el contenedor automáticamente */
     align-content: center;
+    /* Alinea el contenido al centro */
     display: block;
+    /* Establece el modo de visualización como bloque */
 }
 
-.top-left{
+/* Estilo para un elemento en la parte superior izquierda */
+.top-left {
     position: absolute;
+    /* Posiciona el elemento de forma absoluta */
     width: 30px;
+    /* Ancho del elemento */
     top: 15px;
+    /* Distancia desde la parte superior */
     left: 15px;
+    /* Distancia desde la izquierda */
+
+    /* Media query para ocultar el elemento en pantallas más anchas */
     @media screen and (min-width: 650px) {
         visibility: hidden;
-   }
+        /* Oculta el elemento en pantallas de 650px o más */
+    }
 }
 
-.d-flex{
+/* Estilo para un contenedor flexible */
+.d-flex {
     display: flex;
+    /* Usa Flexbox para organizar su contenido */
     justify-content: center;
-    padding: 30px;  
+    /* Centra horizontalmente el contenido */
+    padding: 30px;
+    /* Añade un relleno de 30px */
 }
 
-.img1{
+/* Estilo para una imagen con un tamaño específico */
+.img1 {
     width: 15px;
+    /* Ancho de la imagen */
     height: 14px;
+    /* Altura de la imagen */
 }
 
-.cursor{
+/* Estilo para indicar que el cursor debe cambiar al pasar por encima */
+.cursor {
     cursor: pointer;
+    /* Cambia el cursor a un puntero */
 }
 
-.green{
+/* Estilo de texto en color verde */
+.green {
     color: #85bb65;
+    /* Establece el color de texto a un tono verde */
 }
-.naranja{
+
+/* Estilo para un fondo naranja */
+.naranja {
     background-color: #fe8330 !important;
+    /* Establece un fondo naranja, usando !important para priorizarlo */
 }
 
-.blue2{
-    color:  rgb(71, 71, 209);
+/* Estilo de texto en color azul */
+.blue2 {
+    color: rgb(71, 71, 209);
+    /* Establece el color de texto a un tono azul */
 }
 
-.title{
+/* Estilo para un título centrado */
+.title {
     position: absolute;
-    display: flex ;
+    /* Posiciona el título de forma absoluta */
+    display: flex;
+    /* Usa Flexbox para organizar su contenido */
     top: 50px;
+    /* Distancia desde la parte superior */
     justify-content: center;
+    /* Centra horizontalmente el contenido */
     left: 50%;
+    /* Coloca el elemento en el medio horizontal */
     transform: translateX(-50%);
+    /* Ajusta la posición para centrar el elemento */
     align-items: center;
+    /* Centra verticalmente el contenido */
 }
 
-.transparent{
+/* Estilo para un contenedor transparente */
+.transparent {
     padding: 0px;
+    /* Sin relleno */
     background-color: transparent;
+    /* Fondo transparente */
     border: 2px solid darkgray;
+    /* Borde gris oscuro */
     backdrop-filter: blur(200px);
+    /* Efecto de desenfoque en el fondo */
     border-radius: 25px;
+    /* Bordes redondeados */
     height: 500px;
-    
+    /* Altura fija */
 }
 
-.content{
+/* Estilo para el contenido centrado */
+.content {
     display: flex !important;
+    /* Usa Flexbox, !important para priorizarlo */
     justify-content: center;
+    /* Centra horizontalmente el contenido */
     align-items: center;
+    /* Centra verticalmente el contenido */
     height: 100%;
+    /* Altura ocupa el 100% del contenedor padre */
 }
 
-
-.iorder{
+/* Estilo para elementos de orden */
+.iorder {
     width: 50px;
+    /* Ancho de los elementos de orden */
     padding: 8px;
+    /* Añade un relleno de 8px */
 }
 
-.td,th{
+/* Estilo para celdas de tabla */
+.td,
+th {
     padding: 20px;
-
+    /* Relleno de 20px en celdas y encabezados de tabla */
 }
 
-.white{
+/* Estilo de texto en color blanco */
+.white {
     color: white;
+    /* Establece el color de texto a blanco */
 }
 
-.purple{
-    color:rgb(207, 14, 207)
+/* Estilo de texto en color púrpura */
+.purple {
+    color: #551A8B;
+    /* Establece el color de texto a un tono púrpura */
 }
 
-.fzise{
+/* Estilo para el tamaño de fuente */
+.fzise {
     font-size: 14px;
+    /* Establece el tamaño de la fuente a 14px */
 }
 
-.margin{
+/* Estilo para márgenes superiores */
+.margin {
     margin-top: 30px;
+    /* Añade un margen superior de 30px */
 }
 
-.center{
+/* Estilo para centrar el texto */
+.center {
     text-align: center;
-
+    /* Centra el texto dentro del elemento */
 }
 
-mat-sidenav{
+/* Estilo para la barra lateral */
+mat-sidenav {
     width: 210px;
+    /* Ancho de la barra lateral */
     background-color: rgb(48, 47, 47);
-
+    /* Color de fondo de la barra lateral */
 }
 
-.icon{
+/* Estilo para un icono en la parte superior derecha */
+.icon {
     position: absolute;
+    /* Posiciona el icono de forma absoluta */
     width: 30px;
+    /* Ancho del icono */
     height: 20px;
+    /* Altura del icono */
     top: 50px;
+    /* Distancia desde la parte superior */
     right: 100px;
+    /* Distancia desde la derecha */
 }
 
-mat-sidenav-container{
+/* Estilo para el contenedor de la barra lateral */
+mat-sidenav-container {
     height: 100%;
+    /* Altura del contenedor ocupa el 100% */
     background-color: transparent;
+    /* Fondo transparente */
 }
 
-
-.p-b{
+/* Estilo para posicionar elementos en la parte inferior */
+.p-b {
     position: absolute;
+    /* Posiciona el elemento de forma absoluta */
     bottom: 10px;
+    /* Distancia desde la parte inferior */
 }

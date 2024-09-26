@@ -1,0 +1,105 @@
+/* Estilo para los párrafos, se añade un margen vertical */
+p {
+  margin: 1rem 0px;
+  /* Margen de 1 rem arriba y abajo */
+}
+
+/* Clase para aplicar color negro a los elementos, !important asegura que tenga prioridad sobre otras reglas */
+.blacked {
+  color: black !important;
+  /* Color de texto negro */
+}
+
+/* Clase que permite saltos de línea en el texto */
+.whited {
+  white-space: pre-line;
+  /* Mantiene los saltos de línea en el texto */
+}
+
+/* Estilo base para el diálogo */
+.dialog {
+  width: 14cm;
+  /* Ancho del diálogo en centímetros */
+  text-align: center;
+  /* Texto centrado en el diálogo */
+}
+
+/* Estilo responsivo: si el ancho de la pantalla es menor o igual a 750px, se ajusta el diálogo */
+@media screen and (max-width: 750px) {
+  .dialog {
+    width: 8cm;
+    /* Ancho reducido a 8 cm para pantallas pequeñas */
+    text-align: center;
+    /* Texto centrado */
+  }
+}
+
+/* Estilo para diálogos de menor tamaño */
+.dialog-mini {
+  width: 6cm;
+  /* Ancho del diálogo mini en centímetros */
+  text-align: center;
+  /* Texto centrado */
+}
+
+/* Estilo responsivo para diálogos mini */
+@media screen and (max-width: 750px) {
+  .dialog-mini {
+    width: 6cm;
+    /* Mantiene el ancho en 6 cm para pantallas pequeñas */
+    text-align: center;
+    /* Texto centrado */
+  }
+}
+
+/* Clase para fondo de color rosa */
+.pink {
+  background-color: #ffd5de;
+  /* Color de fondo rosa */
+}
+
+/* Clase para fondo de color verde */
+.green {
+  background-color: #6add8e;
+  /* Color de fondo verde */
+}
+
+/* Clase para aplicar color rojo a elementos */
+.spink {
+  color: red !important;
+  /* Color de texto rojo */
+}
+
+/* Clase para fondo de un tono gris claro */
+.swhite2 {
+  background-color: #d8cece;
+  /* Color de fondo gris claro */
+}
+
+/* Clase para aplicar color verde a los elementos */
+.bgreen {
+  color: green !important;
+  /* Color de texto verde */
+}
+
+/* Clase para aplicar un fondo azul y color de texto blanco */
+.sblue {
+  background-color: #1576C4 !important;
+  /* Color de fondo azul */
+  color: white;
+  /* Color de texto blanco */
+}
+
+/* Clase para añadir un margen derecho de 30px */
+.margin {
+  margin-right: 30px;
+  /* Margen a la derecha de 30 píxeles */
+}
+
+/* Clase para centrar el texto */
+.scenter {
+  position: center;
+  /* 'position: center' no es válido en CSS; debe ser 'position: relative', 'absolute' o 'fixed' */
+  text-align: center;
+  /* Texto centrado */
+}

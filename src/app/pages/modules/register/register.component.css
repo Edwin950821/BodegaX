@@ -1,73 +1,129 @@
-.bg{
+/* Estilo para el contenedor de fondo */
+.bg {
     width: 100%;
+    /* Ocupa el 100% del ancho de la ventana */
     height: 100%;
+    /* Ocupa el 100% de la altura de la ventana */
     position: fixed;
+    /* Fija el elemento en la ventana, sin desplazamiento */
     top: 0;
+    /* Se posiciona en la parte superior */
     left: 0;
+    /* Se posiciona en el lado izquierdo */
     display: flex;
+    /* Utiliza flexbox para la disposición de los hijos */
     justify-content: center;
+    /* Centra horizontalmente los hijos */
     align-items: center;
+    /* Centra verticalmente los hijos */
     background-image: url("/assets/fondo.jpeg");
+    /* Imagen de fondo */
     background-size: cover;
+    /* La imagen cubre todo el área */
     overflow-y: auto;
+    /* Permite desplazamiento vertical si el contenido desborda */
 }
 
-.img{
+/* Estilo para las imágenes, se establece un ancho fijo */
+.img {
     width: 100px;
+    /* Ancho fijo de 100 píxeles */
 }
 
-.center{
+/* Centra el texto dentro de un contenedor */
+.center {
     text-align: center;
+    /* Alineación del texto al centro */
 }
 
-.orange{
-   background-color: rgb(255, 130, 4) !important;
-   color: aliceblue !important;
+/* Estilo para un botón o fondo naranja */
+.orange {
+    background-color: rgb(255, 130, 4) !important;
+    /* Color de fondo naranja */
+    color: aliceblue !important;
+    /* Color del texto en azul claro */
 }
-.transparent{
+
+/* Estilo para un contenedor transparente */
+.transparent {
     padding: 0px;
+    /* Sin relleno */
     background-color: transparent;
+    /* Fondo transparente */
     border: 2px solid darkgray;
+    /* Borde de 2 píxeles color gris oscuro */
     backdrop-filter: blur(200px);
+    /* Filtro de desenfoque de fondo */
     border-radius: 25px;
+    /* Bordes redondeados de 25 píxeles */
     margin: 1rem;
+    /* Margen de 1 rem alrededor */
 }
 
-.forg{
+/* Estilo para un texto con tamaño de fuente reducido */
+.forg {
     font-size: 10px;
+    /* Tamaño de fuente pequeño */
     margin: -5px, 0px, 20px, 5px;
-    position:  relative !important;
+    /* Margen negativo */
+    position: relative !important;
+    /* Posición relativa con !important para prioridad */
     margin: 6px;
+    /* Margen de 6 píxeles */
 }
 
-.card{
+/* Estilo para una tarjeta de contenido */
+.card {
     width: 300px;
+    /* Ancho fijo de 300 píxeles */
     padding: 20px;
-    border: 1px solid  #ccc;
+    /* Relleno interno de 20 píxeles */
+    border: 1px solid #ccc;
+    /* Borde de 1 píxel color gris claro */
     border-radius: 10px;
+    /* Bordes redondeados de 10 píxeles */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra de caja sutil */
     position: relative;
+    /* Posición relativa */
     margin: 50px auto;
+    /* Margen superior de 50 píxeles y centrado horizontal */
     text-align: center;
+    /* Alineación del texto al centro */
     font-family: Arial, sans-serif;
+    /* Fuente de texto */
 }
 
-.message{
-margin-top: -23px;
-font-size: 10px;
-font-weight: bold;
+/* Estilo para mensajes, ajustando el margen y el tamaño de fuente */
+.message {
+    margin-top: -23px;
+    /* Margen superior negativo */
+    font-size: 10px;
+    /* Tamaño de fuente pequeño */
+    font-weight: bold;
+    /* Texto en negrita */
 }
 
-.padding{
+/* Estilo para contenedores con relleno y espacio entre elementos */
+.padding {
     padding: 20px;
+    /* Relleno interno de 20 píxeles */
     flex-wrap: wrap;
+    /* Permite que los elementos secundarios se envuelvan */
     gap: 20px;
+    /* Espacio entre elementos */
     max-width: 300px;
+    /* Ancho máximo de 300 píxeles */
 }
 
-.mini{
+/* Estilo para campos de entrada pequeños */
+.mini {
     height: 70px;
-    .mdc-text-field{
+
+    /* Altura fija de 70 píxeles */
+    .mdc-text-field {
+        /* Selecciona elementos de campo de texto de Material Design */
         align-items: center !important;
-    } 
+        /* Centra los elementos en el eje vertical */
+    }
 }
