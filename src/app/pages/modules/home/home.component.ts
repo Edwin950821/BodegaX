@@ -11,8 +11,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent {
 
-constructor(private appSvc:AppService, private dialog: MatDialog){
+  role = ''
 
+constructor(private appSvc:AppService, private dialog: MatDialog){
+  appSvc.role$.subscribe(r =>{
+    this.role = r
+    console.log(this.role)
+  })
 }
 
   solicitarCajas(){

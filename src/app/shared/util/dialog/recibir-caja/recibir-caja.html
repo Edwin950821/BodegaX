@@ -1,6 +1,6 @@
 <div>
     <!-- Contenedor principal para el contenido del diálogo -->
-    <mat-dialog-content class="utransparent">
+    <mat-dialog-content class="rtransparent">
         <!-- Icono para cerrar el diálogo, con estilo de cursor pointer y posición absoluta -->
         <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
             X
@@ -8,7 +8,7 @@
 
         <div class="scenter">
             <!-- Campo de formulario para ingresar el número de cajas -->
-            <mat-form-field class="umini" align="center">
+            <mat-form-field class="umini text-center">
                 <!-- Etiqueta del campo de formulario -->
                 <mat-label class="umini, p-user">
                     Numero de cajas
@@ -20,13 +20,13 @@
             <br>
 
             <!-- Campo de formulario para ingresar el número de cajas -->
-            <mat-form-field class="umini" align="center">
+            <mat-form-field class="umini" style="margin: 0 auto;">
                 <!-- Etiqueta del campo de formulario -->
                 <mat-label class="umini, p-user">
                     Producto
                 </mat-label>
                 <!-- Campo de entrada para el número de cajas, ligado a la variable username -->
-                <mat-select matInput  [(ngModel)]="producto">
+                <mat-select matInput [(ngModel)]="producto">
                     <mat-option value="Aguila">
                         Aguila
                     </mat-option>
@@ -41,7 +41,7 @@
             </p>
 
             <!-- Contenedor para las acciones del diálogo, alineado al centro -->
-            <mat-dialog-actions align="center">
+            <mat-dialog-actions style="display: flex; justify-content: center;">
                 <div>
                     <!-- Botón para confirmar la acción, llamando a la función confirmar() -->
                     <button (click)="confirmar()" mat-raised-button class="margin sblue"

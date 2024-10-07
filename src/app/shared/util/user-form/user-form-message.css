@@ -55,6 +55,11 @@ p {
   /* Cambia el color del texto a rojo, priorizando esta regla con !important. */
 }
 
+.uwhite {
+ background-color: #d8cece ; 
+}
+
+
 .ublue {
   background-color: #1576C4 !important;
   /* Establece un color de fondo azul oscuro, priorizando la regla. */
@@ -94,6 +99,10 @@ p {
     align-items: center !important;
     /* Alinea verticalmente al centro los elementos de texto dentro de esta clase. */
   }
+}
+
+.umargin{
+  margin-right: 30px;
 }
 
 .center-button {

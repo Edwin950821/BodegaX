@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ManagementRoutingModule } from './management-routing.module';
 import { ManagementComponent } from './management.component';
 import { MaterialModule } from '../../../material.module';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -13,7 +16,8 @@ import { MaterialModule } from '../../../material.module';
   imports: [
     CommonModule,
     ManagementRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ]
 })
 export class ManagementModule { }

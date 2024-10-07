@@ -44,7 +44,8 @@
 }
 
 .blue2{
-    color:  rgb(71, 71, 209);
+    background-color:  rgb(71, 71, 209) !important;
+    color: white !important;
 }
 
 .title{
@@ -74,7 +75,7 @@
 }
 
 .white{
-    color: white;
+    color: white !important;
    
 }
 

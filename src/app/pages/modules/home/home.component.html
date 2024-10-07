@@ -13,11 +13,12 @@
                 <h1 class="order, white"> Venta</h1>
              </div>
              
-            <div class="w-100 white ">
+            <div class="w-100 white">
 
         
                 <div class="center margin-t-100">
-                    <b>Total de cajas Vendidas</b>
+                    <b *ngIf="role=='admin'">Total de cajas Vendidas</b>
+                    <b *ngIf="role=='user'">Total de cajas solicitadas</b>
                     <h1>15</h1>
                     <button (click)="solicitarCajas()" mat-raised-button color="primary" class="blue">Solicitar Caja</button>
                 </div>

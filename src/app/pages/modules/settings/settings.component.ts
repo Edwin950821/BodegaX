@@ -3,16 +3,23 @@ import { MatDialog } from '@angular/material/dialog'; // Importa el servicio par
 import { UserFormDialog } from '../../../shared/util/user-form/user-form-message'; // Importa el componente de diálogo para el formulario de usuario.
 import { HttpClient } from '@angular/common/http'; // Importa el servicio HttpClient para realizar peticiones HTTP.
 import { ConfirmDialog } from '../../../shared/util/confirm/confirm-message'; // Importa el componente de diálogo para confirmar acciones.
+import { AppService } from '../../../app.service';
 
 @Component({
   selector: 'app-settings', // Define el selector del componente.
   templateUrl: './settings.component.html', // Especifica la plantilla HTML del componente.
   styleUrl: './settings.component.css' // Especifica los estilos CSS del componente (nota: debería ser `styleUrls`).
 })
-export class SettingsComponent implements OnInit { // Declara el componente que implementa OnInit.
-  usuarios: any; // Declara una variable para almacenar la lista de usuarios.
+export class SettingsComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, private http: HttpClient) { } // Inyecta los servicios MatDialog y HttpClient.
+  usuarios: any; // Declara una variable para almacenar la lista de usuarios.
+  
+
+  constructor(private dialog: MatDialog, private http: HttpClient, private appSvc: AppService) { } // Inyecta los servicios MatDialog y HttpClient.
+
+  openSidebar() {
+    this.appSvc.toggleSidebar()
+  } // Clase del componente
 
   ngOnInit(): void { // Método que se llama cuando se inicializa el componente.
     this.getUsers(); // Llama a la función para obtener la lista de usuarios.
@@ -51,6 +58,8 @@ export class SettingsComponent implements OnInit { // Declara el componente que 
     res.afterClosed().subscribe(r => { // Después de cerrar el diálogo, se vuelve a obtener la lista de usuarios.
       this.getUsers();
     });
+
+   
   }
 
   eliminar(user: any) { // Método para eliminar un usuario.
@@ -62,5 +71,7 @@ export class SettingsComponent implements OnInit { // Declara el componente que 
         });
       }
     });
+
+   
   }
 }

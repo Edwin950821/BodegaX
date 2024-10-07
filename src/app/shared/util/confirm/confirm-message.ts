@@ -35,6 +35,7 @@ export class ConfirmDialog {
   bColor = ''; // Almacena una clase de color para botones.
   mini = false; // Bandera para indicar si el diálogo es de tamaño mini.
   class = ''; // Almacena clases CSS adicionales.
+bgreen: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private mydialog: MatDialogRef<ConfirmDialog>) {
     // Constructor que inyecta datos, el FormBuilder y la referencia del diálogo.

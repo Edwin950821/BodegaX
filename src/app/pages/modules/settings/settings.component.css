@@ -108,6 +108,17 @@
     /* Aplica un padding de 30px alrededor del contenedor */
 }
 
+.stop-left{
+    position: absolute;
+    width: 30px;
+    top: 15px;
+    left: 15px;
+    @media screen and (min-width: 650px) {
+        visibility: hidden;
+   }
+}
+
+
 .s-img {
     height: 20px;
     /* Establece la altura de la imagen */

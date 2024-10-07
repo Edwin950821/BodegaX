@@ -122,4 +122,9 @@ export class UserFormDialog {
       });
     }
   }
+
+  cancel(){
+    this.mydialog.close(false);
+  }
+
 }

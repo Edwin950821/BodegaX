@@ -1,7 +1,8 @@
 <div class="bg">
     <img src="/assets/icon.png" class="icon">
+    <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
 
-    
+
     <mat-card class="transparent">
 
         <mat-card-content class="center">
@@ -14,10 +15,13 @@
             <div class="w-100 white margin">
                 <div class="center margin-top">
                     <b>Numero de cajas en bodega</b>
-                    <h1>150</h1>
-                    <button (click)="Despachar()" mat-raised-button color="primary" class="blue">Despachar
-                        Cajas</button>
+                    <h1>{{total}}</h1>
+
                 </div>
+
+                <button (click)="recibirCaja()" mat-raised-button color="white" class="blue2" rel="stylesheet">
+                         Recibir
+                    </button>
 
 
                 <div class="d-flex">
@@ -27,20 +31,13 @@
                             <th class="margin"> Cantidad (cajas) </th>
 
                         </tr>
-                        <tr class="center">
-                            <td> Aguila </td>
-                            <td> 4 </td>
-                        </tr>
-                        <tr class="center">
-                            <td class="margin"> Costeña </td>
-                            <td class="margin"> 6 </td>
+                        <tr class="center" *ngFor="let producto of productos">
+                            <td> {{producto.nombre}}</td>
+                            <td> {{producto.stock}} </td>
                         </tr>
 
 
-                        <tr class="center, green">
-                            <th>Total </th>
-                            <th>10</th>
-                        </tr>
+
 
 
 

@@ -113,6 +113,17 @@
     /* Relleno de 30px */
 }
 
+.htop-left{
+    position: absolute;
+    width: 30px;
+    top: 15px;
+    left: 15px;
+    @media screen and (min-width: 650px) {
+        visibility: hidden;
+   }
+}
+
+
 /* Repetición de las clases .hbr, .h-100, .hicn, .htitle, .horder, .hwhite, .hsize, .hcenter, .h-flex */
 /* Estas clases parecen duplicadas, pero con el prefijo 'h' en lugar de 'hs'. Tienen las mismas funcionalidades, pero estan destinadas a diferentes secciones del diseño */
 
@@ -142,6 +153,12 @@
     /* Centrado vertical */
     height: 100%;
     /* Ocupa todo el alto del contenedor padre */
+}
+
+mat-sidenav{
+    width: 210px;
+    background-color: rgb(48, 47, 47);
+
 }
 
 /* Estilos para las celdas de tabla (<td>) */

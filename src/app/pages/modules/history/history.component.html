@@ -1,6 +1,8 @@
 <!-- Contenedor principal con un fondo de gradiente (clase hbr) -->
 <div class="hbr">
 
+    <img src="/assets/menu.png" class="htop-left" (click)="openSidebar()">
+
     <!-- Imagen ícono en la esquina superior derecha (clase hsicn) -->
     <img src="/assets/icon.png" class="hsicn">
 
@@ -27,31 +29,79 @@
                     <table>
                         <!-- Fila de encabezado de la tabla -->
                         <tr>
-                            <th> Cliente </th> <!-- Columna para el nombre del cliente -->
-                            <th> Total </th>    <!-- Columna para el total de la venta -->
-                            <th> Fecha </th>    <!-- Columna para la fecha de la venta -->
-                            <th></th>           <!-- Columna vacía (para espaciar la ultima columna) -->
+                            <th *ngIf="role == 'admin'"> Cliente </th> <!-- Columna para el nombre del cliente -->
+                            <th> Fecha </th> <!-- Columna para el total de la venta -->
+                            <th> Total </th> <!-- Columna para la fecha de la venta -->
+                            <th></th> <!-- Columna vacía (para espaciar la ultima columna) -->
                         </tr>
 
-                        <!-- Fila que se repetirá para cada elemento de 'history' con la directiva *ngFor -->
-                        <tr *ngFor="let venta of history" class="hswhite hscenter">
-                            <!-- Muestra el nombre del cliente -->
-                            <td>
-                                {{venta.cliente}}
-                            </td>
-                            <!-- Muestra el total de la venta -->
-                            <td>
-                                {{venta.total_venta}}
-                            </td>
-                            <!-- Muestra la fecha de la venta -->
-                            <td>
-                                {{venta.fecha}}
-                            </td>
-                            <!-- Enlace para ver más detalles de la venta -->
-                            <td>
-                               <a href="">ver</a>
-                            </td>
-                        </tr>
+                        <ng-container *ngFor="let venta of history">
+
+                            <!-- Fila que se repetirá para cada elemento de 'history' con la directiva *ngFor -->
+                            <tr class="hswhite hscenter">
+                                <!-- Muestra el nombre del cliente -->
+                                <td *ngIf="role == 'admin'">
+                                    {{venta.cliente}}
+                                </td>
+                                <!-- Muestra el total de la venta -->
+                                <td>
+                                    {{venta.fecha}}
+                                </td>
+                                <!-- Muestra la fecha de la venta -->
+                                <td>
+                                    {{venta.total_venta}}
+                                </td>
+                                <!-- Enlace para ver más detalles de la venta -->
+                                <td>
+                                    <a href="javascript:void(0);" (click)="venta.vdetalle = !venta.vdetalle">ver</a>
+                                </td>
+                            </tr>
+
+                            <tr *ngIf="venta.vdetalle == true">
+                                <td>Producto</td>
+                                <td>Cantidad</td>
+                                <td>Total Parcial</td>
+                            </tr>
+
+                            <!-- Esta fila de la tabla (tr) actúa como encabezado con las columnas "Producto", "Cantidad" y "Total Parcial". -->
+                            <!-- La directiva *ngIf comprueba si la propiedad 'vdetalle' del objeto 'venta' es verdadera. -->
+                            <!-- Si 'vdetalle' es true, esta fila se renderiza, mostrando los títulos de las columnas. Si es false, la fila no se muestra. -->
+
+                            <ng-container *ngIf="venta.vdetalle == true">
+                                <!-- Este <ng-container> es un contenedor lógico que no genera un elemento HTML adicional. -->
+                                <!-- La directiva *ngIf nuevamente evalúa si 'vdetalle' es true. Si lo es, permite renderizar el contenido dentro de este contenedor. -->
+
+                                <tr *ngFor="let detalle of venta.detalle">
+                                    <!-- La directiva *ngFor itera sobre el array 'venta.detalle'. Para cada elemento del array, se crea una nueva fila (tr). -->
+                                    <!-- Cada objeto 'detalle' representa una fila con los datos de un producto, su cantidad y el total parcial. -->
+
+                                    <td>
+                                        {{detalle.producto}}
+                                    </td>
+                                    <!-- En esta celda (td), se muestra el nombre del producto accediendo a la propiedad 'producto' de cada objeto 'detalle'. -->
+
+                                    <td>
+                                        {{detalle.Cantidad}}
+                                    </td>
+                                    <!-- Aquí se muestra la cantidad del producto accediendo a la propiedad 'Cantidad' de cada objeto 'detalle'. -->
+
+                                    <td>
+                                        {{detalle.total_parcial}}
+                                    </td>
+                                    <!-- Esta celda muestra el total parcial de cada producto, accediendo a la propiedad 'total_parcial' del objeto 'detalle'. -->
+
+                                </tr>
+                            </ng-container>
+
+
+
+
+
+                        </ng-container>
+
+
+
+
 
                         <!-- Fila adicional con un estilo centrado -->
                         <tr class="hscenter, green">
@@ -63,12 +113,12 @@
 
                     </table>
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </mat-card-content> 
+        </mat-card-content>
 
-    </mat-card> 
+    </mat-card>
 
-</div> 
+</div>

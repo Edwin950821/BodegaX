@@ -68,10 +68,18 @@
             <mat-dialog-actions align="center">
                 <!-- Acciones del diálogo, centradas -->
                 <div>
-                    <button (click)="register()" mat-raised-button class="ublue" rel="stylesheet">Registrarse</button>
+                    <button (click)="register()" mat-raised-button class="ublue  umargin" rel="stylesheet">Registrarse</button>
                     <!-- Botón para registrar al usuario, que ejecuta la función 'register()' al hacer clic -->
                 </div>
+
+                <div>
+                    <button (click)="cancel()" mat-raised-button class="uwhite" rel="stylesheet">Cancelar</button>
+                    <!-- Botón para registrar al usuario, que ejecuta la función 'register()' al hacer clic -->
+                </div>
+
             </mat-dialog-actions>
+
+
 
         </div>
     </mat-dialog-content>
