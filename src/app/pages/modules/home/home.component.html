@@ -2,27 +2,28 @@
     <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
     <img src="/assets/icon.png" class="icon">
 
-    
 
-    
-     <mat-card class="transparent">
+
+
+    <mat-card class="transparent">
         <mat-card-content class="center">
 
-            <div class="center header"  >
-                <img src="/assets/venta.png" class="iorder img30"> 
+            <div class="center header">
+                <img src="/assets/venta.png" class="iorder img30">
                 <h1 class="order, white"> Venta</h1>
-             </div>
-             
+            </div>
+
             <div class="w-100 white">
 
-        
+
                 <div class="center margin-t-100">
                     <b *ngIf="role=='admin'">Total de cajas Vendidas</b>
                     <b *ngIf="role=='user'">Total de cajas solicitadas</b>
                     <h1>15</h1>
-                    <button (click)="solicitarCajas()" mat-raised-button color="primary" class="blue">Solicitar Caja</button>
+                    <button (click)="solicitarCajas()" mat-raised-button color="primary"
+                        class="blue">Solicitar Caja</button>
                 </div>
-        
+
                 <div class="center margin">
                     <p>Detalles</p>
                 </div>
@@ -40,33 +41,32 @@
                             <td> Butweiser </td>
                             <td> 6 </td>
                         </tr>
-        
+
                         <tr class="center, green">
                             <th>Total</th>
                             <th>$800.000</th>
                         </tr>
-        
-        
+
+
                     </table>
-        
+
                 </div>
-        
-                
-        
+
+
+
                 <div class="center">
-                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet"
-                        href="c:\Users\USUARIO\Downloads\terminar.png">
+                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet">
                         <img src="/assets/terminar.png" class="img1"> Terminar Jornada
                     </button>
-        
+
                 </div>
-        
+
             </div>
-        
+
         </mat-card-content>
     </mat-card>
 
-    
-   
+
+
 
 </div>

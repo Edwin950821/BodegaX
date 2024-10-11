@@ -1,17 +1,18 @@
-import { NgModule } from '@angular/core'; // Importa el decorador NgModule para definir un módulo de Angular.
-import { Component, signal } from '@angular/core'; // Importa Component y signal, que permite crear una señal reactiva.
-import { CommonModule } from '@angular/common'; // Importa el módulo común que contiene funcionalidades básicas de Angular.
+import { NgModule } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { SettingsRoutingModule } from './settings-routing.module'; // Importa el módulo de enrutamiento para la configuración.
-import { SettingsComponent } from './settings.component'; // Importa el componente que maneja la lógica de configuración.
-import { MaterialModule } from '../../../material.module'; // Importa un módulo de Angular Material que incluye componentes UI.
-import { CheckLoginGuard } from '../../../shared/guard/check-login.guard'; // Importa un guard que verifica si el usuario está autenticado.
-import { CheckboxComponent } from '../../../checkbox/checkbox.component'; // Importa un componente reutilizable de casilla de verificación.
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importa clases y módulos para trabajar con formularios.
-import { AppComponent } from '../../../app.component'; // Importa el componente principal de la aplicación (generalmente no es necesario aquí).
-import { RouterOutlet } from '@angular/router'; // Importa el RouterOutlet que permite la carga de componentes en función de la ruta activa.
-import { last } from 'rxjs'; // Importa el operador 'last' de RxJS, aunque no se utiliza en este bloque.
-import { HttpClientModule } from '@angular/common/http'; // Importa el módulo HttpClient para realizar peticiones HTTP.
+import { SettingsRoutingModule } from './settings-routing.module';
+import { SettingsComponent } from './settings.component';
+import { MaterialModule } from '../../../material.module';
+import { CheckLoginGuard } from '../../../shared/guard/check-login.guard';
+import { CheckboxComponent } from '../../../checkbox/checkbox.component';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from '../../../app.component';
+import { RouterOutlet } from '@angular/router';
+import { last } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +26,17 @@ import { HttpClientModule } from '@angular/common/http'; // Importa el módulo H
     RouterOutlet, // Importa RouterOutlet para la carga dinámica de componentes basados en rutas.
     ReactiveFormsModule, // Importa el módulo de formularios reactivos para crear formularios más complejos y escalables.
     HttpClientModule // Importa el módulo HttpClient para facilitar las solicitudes HTTP.
-  ]
+],
+providers:[
+    CommonModule,
+    SettingsRoutingModule,
+    MaterialModule,
+    FormsModule, 
+    RouterOutlet,
+    ReactiveFormsModule,
+    HttpClientModule,
+
+  ],
 })
 export class SettingsModule { // Define el módulo de configuración.
 

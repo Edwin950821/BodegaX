@@ -4,11 +4,12 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from "@angu
 import { CommonModule } from "@angular/common";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogContent } from '@angular/material/dialog';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MaterialModule } from "../../../../material.module";
 
 
 // Definición de un tipo para las orientaciones, puede ser "p", "portrait", "l" o "landscape"
@@ -24,6 +25,9 @@ export type orietations = "p" | "portrait" | "l" | "landscape";
     MatFormFieldModule,
     FormsModule,
     MatSelectModule,
+    MaterialModule,
+    CommonModule,
+    HttpClientModule
 
   ] // Importa módulos necesarios para el componente
 
@@ -31,18 +35,6 @@ export type orietations = "p" | "portrait" | "l" | "landscape";
 })
 
 export class RecibirCaja {
-  cancel() {
-    throw new Error('Method not implemented.');
-  }
-  confirmar() {
-    throw new Error('Method not implemented.');
-  }
-  username: any;
-  producto: any;
-  // ...
-}
-
-export class recibirCaja {
   title = ''; // Título del diálogo, inicializado como una cadena vacía
   color = 'pink'; // Color por defecto del diálogo
   bColor = ''; // Clase de color adicional, se establece más adelante
@@ -55,13 +47,16 @@ export class recibirCaja {
   id: any; // ID del usuario
   address: any; // Dirección del usuario
   password: any; // Contraseña del usuario
-  producto = ''
+  producto = '';
+  quantity = 0;
+
+  productos: any[] = []
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any, // Inyección de datos pasados al diálogo
     private fb: FormBuilder, // Servicio para construir formularios reactivos
     private http: HttpClient,
-    private mydialog: MatDialogRef<recibirCaja>,// Referencia al diálogo actual
+    private mydialog: MatDialogRef<RecibirCaja>,// Referencia al diálogo actual
     private dialog: MatDialog,
 
 
@@ -71,6 +66,10 @@ export class recibirCaja {
     this.color = data.color; // Asigna el color desde los datos
     this.class += data.color; // Añade el color a la clase del diálogo
     this.bColor = 'b' + data.color; // Establece la clase de color adicional
+
+    this.productos = data.productos
+
+    console.log(data)
 
     // Verifica si se debe aplicar una clase para un diálogo pequeño
     if (data.size) {
@@ -91,7 +90,18 @@ export class recibirCaja {
 
   // Método para confirmar la acción en el diálogo
   confirmar() {
-    this.mydialog.close(true); // Cierra el diálogo y devuelve true
+    if(this.producto){
+      var selected = this.productos.find(p=> p.uuid == this.producto)
+      selected.stock = selected.stock + this.quantity
+      this.http.put("http://localhost:8080/productos/edit", selected).subscribe(res=>{
+        this.mydialog.close(selected); // Cierra el diálogo y devuelve true
+      })
+    }else{
+      this.mydialog.close(false); // Cierra el diálogo y devuelve false
+
+    }
+    
+    
   }
 
 

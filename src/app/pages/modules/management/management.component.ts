@@ -58,10 +58,20 @@ export class ManagementComponent {
   }
 
   recibirCaja() {
-    this.dialog.open(RecibirCaja, {
+    var r = this.dialog.open(RecibirCaja, {
       data: {
-        title: 'Hola'
+        title: 'Hola',
+        productos: this.productos
 
+      }
+    })
+    r.afterClosed().subscribe(rx=>{
+      if(rx && rx!= false){
+        this.productos.find((p: any)=> p.uuid == rx.uuid).stock = rx.stock
+        this.total = 0
+        this.productos.forEach((p: any) => {
+          this.total = this.total + p.stock
+        })
       }
     })
 

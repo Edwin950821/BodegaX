@@ -1,64 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-// Importación de Component y OnInit desde Angular core
 import { Router } from '@angular/router';
-// Importación del Router para la navegación
 import { AppService } from './app.service';
-// Importación del servicio de la aplicación para manejar la lógica de negocio
 
 @Component({
-  selector: 'app-root', // Selector para usar este componente en el HTML
-  templateUrl: './app.component.html', // Archivo de plantilla HTML para este componente
-  styleUrls: ['./app.component.css'] // Estilos CSS para este componente
+  selector: 'app-root', // Define el selector para usar este componente en el HTML.
+  templateUrl: './app.component.html', // Indica el archivo de plantilla HTML asociado con este componente.
+  styleUrls: ['./app.component.css'] // Indica el archivo de estilos CSS asociado con este componente.
 })
-export class AppComponent implements OnInit {
-  title = 'BodegaX-angular'; // Título de la aplicación
-  role = 'client'; // Rol del usuario, por defecto se establece como 'client'
-  logged = false; // Estado de inicio de sesión, inicialmente se establece como false
+export class AppComponent implements OnInit{
+  title = 'BodegaX-angular';
+  role = 'client'
+  logged = false
 
-  constructor(private router: Router, public appSvc: AppService) { }
-  // Constructor que inyecta el Router y el servicio de la aplicación
+  constructor(private router: Router, public appSvc: AppService) { } 
+  // Constructor que inyecta el servicio Router y el servicio AppService para su uso en este componente.
 
   ngOnInit(): void {
-    // Método del ciclo de vida que se ejecuta al inicializar el componente
-    var session = sessionStorage.getItem("bodegax");
-    // Se intenta obtener la sesión del almacenamiento de sesión
+    // Método del ciclo de vida OnInit, que se ejecuta cuando el componente es inicializado.
+
+    var session = sessionStorage.getItem("bodegax"); 
+    // Obtiene la sesión almacenada en el sessionStorage con la clave "bodegax".
 
     if (session == undefined) {
-      // Si no hay sesión, redirige al usuario a la página de login
+      // Si no se encuentra una sesión, redirige al usuario a la página de login.
       this.router.navigate(["/login"]);
     }
 
-    // Suscripción al observable de rol del servicio para actualizar el rol del usuario
     this.appSvc.role$.subscribe(r => {
-      this.role = r; // Actualiza el rol del usuario
+      // Suscripción al observable role$ del servicio AppService para actualizar el rol del usuario.
+      this.role = r; // Actualiza el rol del usuario cuando cambia.
     });
 
-    // Suscripción al observable de estado de inicio de sesión del servicio
     this.appSvc.isLogged$.subscribe(r => {
-      this.logged = r; // Actualiza el estado de inicio de sesión
+      // Suscripción al observable isLogged$ del servicio AppService para actualizar el estado de inicio de sesión.
+      this.logged = r; // Actualiza el estado de inicio de sesión cuando cambia.
     });
   }
 
-  // Métodos vacíos para funcionalidades futuras
-  inicio() {
-    // Método para manejar la lógica de inicio
+  // Métodos vacíos para lógica futura
+
+  inicio() { 
+    // Método placeholder para manejar la lógica de inicio.
   }
 
-  historial() {
-    // Método para manejar la lógica del historial
+  historial() { 
+    // Método placeholder para manejar la lógica del historial de pedidos.
   }
 
-  setting() {
-    // Método para manejar la lógica de configuración
+  setting() { 
+    // Método placeholder para manejar la lógica de configuraciones.
   }
 
-  logOut() {
-    // Método para cerrar sesión
-    this.logged = false; // Actualiza el estado de inicio de sesión a false
-    this.appSvc.logOut(); // Llama al método de cierre de sesión del servicio
+  logOut() { 
+    // Método para cerrar la sesión del usuario.
+    this.logged = false; // Establece el estado de inicio de sesión como false.
+    this.appSvc.logOut(); // Llama al método logOut del servicio AppService.
   }
 
-  view() {
-    // Método para manejar la lógica de vista
+  view() { 
+    // Método placeholder para manejar la lógica de vista (visualización de datos).
   }
-}
+} // Fin de la clase AppComponent.
+
+
+
+

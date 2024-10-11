@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AppService } from '../../../app.service';
 import { MatDialog } from '@angular/material/dialog';
-import { SolicitarCaja } from '../../../shared/util/solicitar-caja/solicitar-caja';
-import { Title } from '@angular/platform-browser';
+
+import { DespacharCaja } from '../../../shared/util/despachar-caja/despachar-caja';
 
 @Component({
   selector: '/app-home',
@@ -11,36 +11,28 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent {
 
+
   role = ''
+  constructor(private dialog: MatDialog, private appSvc: AppService) {
+  }
 
-constructor(private appSvc:AppService, private dialog: MatDialog){
-  appSvc.role$.subscribe(r =>{
-    this.role = r
-    console.log(this.role)
-  })
+  solicitarCajas() {
+    this.dialog.open(DespacharCaja, {data: { title: ''}})
+  }
+
+
+    terminar() {
+
+    }
+
+    openSidebar() {
+      this.appSvc.toggleSidebar();
+    }
+
+    icon() {
+    }
+
+
+
 }
-
-  solicitarCajas(){
-    this.dialog.open(SolicitarCaja, {data: {
-      title: 'Hola' 
-    }})
-  }
-
-  terminar(){
-    
-  } 
-
-  openSidebar(){
-    this.appSvc.toggleSidebar()
-  }
-
-  icon(){
-    
-  }
-}
-
-
-
-
-
 

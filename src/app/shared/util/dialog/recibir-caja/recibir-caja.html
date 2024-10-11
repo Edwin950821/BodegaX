@@ -14,7 +14,7 @@
                     Numero de cajas
                 </mat-label>
                 <!-- Campo de entrada para el número de cajas, ligado a la variable username -->
-                <input matInput [(ngModel)]="username">
+                <input type="number" matInput [(ngModel)]="quantity">
             </mat-form-field>
 
             <br>
@@ -27,8 +27,8 @@
                 </mat-label>
                 <!-- Campo de entrada para el número de cajas, ligado a la variable username -->
                 <mat-select matInput [(ngModel)]="producto">
-                    <mat-option value="Aguila">
-                        Aguila
+                    <mat-option *ngFor="let p of productos" value="{{p.uuid}}">
+                        {{p.nombre}}
                     </mat-option>
                 </mat-select>
             </mat-form-field>

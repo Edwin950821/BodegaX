@@ -34,7 +34,9 @@ const routes: Routes = [
   { path: 'history', loadChildren: () => import('./pages/modules/history/history.module').then(m => m.HistoryModule) },
   { path: 'view', loadChildren: () => import('./pages/modules/view/view.module').then(m => m.ViewModule) },
   { path: 'hsale', loadChildren: () => import('./pages/module/hsale/hsale.module').then(m => m.HsaleModule) },
-  { path: 'register', loadChildren: () => import('./pages/modules/register/register.module').then(m => m.RegisterModule) }
+  { path: 'register', loadChildren: () => import('./pages/modules/register/register.module').then(m => m.RegisterModule) },
+  { path: 'home', loadChildren: () => import('./pages/modules/home/home.module').then(m => m.HomeModule) }
+
 ];
 
 // Definición del módulo de enrutamiento de la aplicación
