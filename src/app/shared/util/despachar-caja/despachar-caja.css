@@ -85,3 +85,12 @@ p {
   text-align: center;
   /* Centra el texto dentro del elemento. */
 }
+
+.f-center{
+  display: flex;
+  justify-content: center;
+}
+
+.w-40{
+  width: 40px !important;
+}

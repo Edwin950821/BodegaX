@@ -33,7 +33,7 @@ role: any;
   ngOnInit(): void {
 
     // Realiza una solicitud HTTP GET para obtener todos los clientes.
-    this.http.get("http://localhost:8080/clientes/all").subscribe( // Suscribe al observable para recibir la respuesta.
+    this.http.get("http://localhost:8080/admin/all").subscribe( // Suscribe al observable para recibir la respuesta.
       (res2: any) => { // Callback que maneja la respuesta de los clientes.
         this.client = res2; // Asigna los datos de los clientes a la variable 'client'.
 

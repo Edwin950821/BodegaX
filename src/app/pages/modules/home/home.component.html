@@ -1,72 +1,60 @@
-<div class="bg">
+<div class="bg"> <!-- Div principal con clase para el fondo -->
     <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
-    <img src="/assets/icon.png" class="icon">
+    <!-- Imagen para el menú superior izquierdo con un evento de clic para abrir una barra lateral -->
+    <img src="/assets/icon.png" class="icon"> <!-- Imagen de icono principal -->
 
+    <mat-card class="transparent"> <!-- Componente de tarjeta Angular Material con clase de transparencia -->
+        <mat-card-content class="center"> <!-- Contenido de la tarjeta, centrado -->
 
-
-
-    <mat-card class="transparent">
-        <mat-card-content class="center">
-
-            <div class="center header">
-                <img src="/assets/venta.png" class="iorder img30">
-                <h1 class="order, white"> Venta</h1>
+            <div class="center header"> <!-- Encabezado centrado -->
+                <img src="/assets/venta.png" class="iorder img30"> <!-- Imagen de venta con clases específicas -->
+                <h1 class="order, white">Venta</h1> <!-- Título H1 con clases para orden y color blanco -->
             </div>
 
-            <div class="w-100 white">
-
-
-                <div class="center margin-t-100">
-                    <b *ngIf="role=='admin'">Total de cajas Vendidas</b>
-                    <b *ngIf="role=='user'">Total de cajas solicitadas</b>
-                    <h1>15</h1>
-                    <button (click)="solicitarCajas()" mat-raised-button color="primary"
-                        class="blue">Solicitar Caja</button>
+            <div class="w-100 white"> <!-- Div de ancho completo con texto blanco -->
+                <div class="center margin-t-100"> <!-- Div centrado con margen superior -->
+                    <b *ngIf="role=='admin'">Total de cajas Vendidas</b> <!-- Texto en negrita para administradores -->
+                    <b *ngIf="role=='user'">Total de cajas solicitadas</b> <!-- Texto en negrita para usuarios -->
+                    <h1>15</h1> <!-- Número de cajas -->
+                    <button (click)="solicitarCajas()" mat-raised-button color="primary" class="blue">Despachar
+                        Caja</button> <!-- Botón para despachar caja con evento de clic -->
                 </div>
 
-                <div class="center margin">
-                    <p>Detalles</p>
+                <div class="center margin"> <!-- Div centrado con margen -->
+                    <p>Detalles</p> <!-- Texto de detalles -->
                 </div>
-                <div class="d-flex">
-                    <table>
+
+                <div class="d-flex"> <!-- Div con diseño de flexbox -->
+                    <table> <!-- Tabla para mostrar datos -->
                         <tr>
-                            <th> Marca </th>
-                            <th> Cantidad (cajas) </th>
+                            <th>Marca</th> <!-- Encabezado de columna: Marca -->
+                            <th>Cantidad (cajas)</th> <!-- Encabezado de columna: Cantidad -->
                         </tr>
-                        <tr class="center">
-                            <td> Aguila </td>
-                            <td> 4 </td>
+                        <tr class="center" *ngFor="let venta of ventas">
+                            <!-- Filas dinámicas generadas a partir del array ventas -->
+                            <td>{{venta.nombre}}</td> <!-- Columna de nombre de la venta -->
+                            <td>{{venta.cantidad}}</td> <!-- Columna de cantidad de la venta -->
                         </tr>
-                        <tr class="center">
-                            <td> Butweiser </td>
-                            <td> 6 </td>
+                        <tr class="center"> <!-- Fila estática -->
+                            <td>Butweiser</td> <!-- Marca estática -->
+                            <td>6</td> <!-- Cantidad estática -->
                         </tr>
-
-                        <tr class="center, green">
-                            <th>Total</th>
-                            <th>$800.000</th>
+                        <tr class="center, green"> <!-- Fila para el total con clase verde -->
+                            <th>Total</th> <!-- Encabezado de total -->
+                            <th>$800.000</th> <!-- Total de la cantidad -->
                         </tr>
-
-
                     </table>
-
                 </div>
 
-
-
-                <div class="center">
+                <div class="center"> <!-- Div centrado -->
                     <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet">
-                        <img src="/assets/terminar.png" class="img1"> Terminar Jornada
+                        <!-- Botón para terminar jornada con evento de clic -->
+                        <img src="/assets/terminar.png" class="img1"> <!-- Imagen en el botón -->
+                        Terminar Jornada
                     </button>
-
                 </div>
-
             </div>
 
         </mat-card-content>
     </mat-card>
-
-
-
-
 </div>

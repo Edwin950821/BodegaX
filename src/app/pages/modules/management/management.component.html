@@ -1,66 +1,45 @@
-<div class="bg">
-    <img src="/assets/icon.png" class="icon">
-    <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
+<div class="bg"> <!-- Div principal con clase para el fondo -->
+    <img src="/assets/icon.png" class="icon"> <!-- Imagen de icono principal con clase 'icon' -->
+    <img src="/assets/menu.png" class="top-left" (click)="openSidebar()"> <!-- Imagen para el menú superior izquierdo con un evento de clic para abrir una barra lateral -->
 
+    <mat-card class="transparent"> <!-- Tarjeta de Angular Material con clase de transparencia -->
+        <mat-card-content class="center"> <!-- Contenido de la tarjeta, centrado -->
 
-    <mat-card class="transparent">
-
-        <mat-card-content class="center">
-
-            <div class="center title">
-                <img src="/assets/gestion.png" class="iorder">
-                <h1 class="white f24"> Mi Bodega</h1>
+            <div class="center title"> <!-- Encabezado centrado con clase 'title' -->
+                <img src="/assets/gestion.png" class="iorder"> <!-- Imagen de gestión con clases específicas -->
+                <h1 class="white f24"> Mi Bodega</h1> <!-- Título H1 con clases para color blanco y fuente de tamaño 24 -->
             </div>
 
-            <div class="w-100 white margin">
-                <div class="center margin-top">
-                    <b>Numero de cajas en bodega</b>
-                    <h1>{{total}}</h1>
-
+            <div class="w-100 white margin"> <!-- Div de ancho completo, texto blanco y margen -->
+                <div class="center margin-top"> <!-- Div centrado con margen superior -->
+                    <b>Numero de cajas en bodega</b> <!-- Texto en negrita -->
+                    <h1>{{total}}</h1> <!-- Título H1 que muestra el total de cajas en bodega -->
                 </div>
 
-                <button (click)="recibirCaja()" mat-raised-button color="white" class="blue2" rel="stylesheet">
-                         Recibir
-                    </button>
+                <button (click)="recibirCaja()" mat-raised-button color="white" class="blue2" rel="stylesheet"> <!-- Botón para recibir caja con evento de clic -->
+                    Recibir <!-- Texto del botón -->
+                </button>
 
-
-                <div class="d-flex">
-                    <table>
-                        <tr>
-                            <th class="margin"> Marca </th>
-                            <th class="margin"> Cantidad (cajas) </th>
-
+                <div class="d-flex"> <!-- Div con diseño de flexbox -->
+                    <table> <!-- Tabla para mostrar datos -->
+                        <tr> <!-- Fila de la tabla -->
+                            <th class="margin">Marca</th> <!-- Encabezado de columna con margen: Marca -->
+                            <th class="margin">Cantidad (cajas)</th> <!-- Encabezado de columna con margen: Cantidad -->
                         </tr>
-                        <tr class="center" *ngFor="let producto of productos">
-                            <td> {{producto.nombre}}</td>
-                            <td> {{producto.stock}} </td>
+                        <tr class="center" *ngFor="let producto of productos"> <!-- Filas dinámicas generadas a partir del array productos -->
+                            <td>{{producto.nombre}}</td> <!-- Columna de nombre del producto -->
+                            <td>{{producto.stock}}</td> <!-- Columna de stock del producto -->
                         </tr>
-
-
-
-
-
-
-                    </table>
-
+                    </table> <!-- Fin de la tabla -->
                 </div>
 
-                <div class="center">
-                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet"
-                        href="c:\Users\USUARIO\Downloads\terminar.png">
-                        <img src="/assets/terminar.png" class="img1"> Terminar Jornada
+                <div class="center"> <!-- Div centrado -->
+                    <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet" href="c:\Users\USUARIO\Downloads\terminar.png"> <!-- Botón para terminar jornada con evento de clic -->
+                        <img src="/assets/terminar.png" class="img1"> <!-- Imagen en el botón -->
+                        Terminar Jornada <!-- Texto del botón -->
                     </button>
-
                 </div>
-
-
             </div>
-
-        </mat-card-content>
-
-    </mat-card>
-
-
-
-
-</div>
+        </mat-card-content> <!-- Fin del contenido de la tarjeta -->
+    </mat-card> <!-- Fin de la tarjeta -->
+</div> <!-- Fin del div principal -->

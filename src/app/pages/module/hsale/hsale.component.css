@@ -1,4 +1,4 @@
-.hbr{
+.hbr {
     top: 0;
     left: 0;
     width: 100%;
@@ -6,54 +6,66 @@
     background-image: linear-gradient(to right, #333, #777);
     display: flex;
 }
+/* Clase para un contenedor con posicionamiento absoluto, ocupa toda la pantalla.
+   Aplica un fondo con un degradado de colores de #333 a #777 de izquierda a derecha.
+   Usa flexbox para el diseño interno. */
 
-
-.hs-100{
+.hs-100 {
     width: 100%;
     margin: 0 auto;
     align-content: center;
 }
+/* Clase para un contenedor de ancho completo, centrado horizontalmente con auto margen,
+   y el contenido alineado al centro. */
 
-
-.hsicn{
+.hsicn {
     position: absolute;
     width: 30px;
     height: 20px;
     top: 50px;
     right: 100px;
 }
+/* Clase para un icono posicionado de manera absoluta, con dimensiones específicas.
+   Ubicado a 50px desde la parte superior y 100px desde la derecha. */
 
-.hstitle{
+.hstitle {
     position: absolute;
-    display: flex ;
+    display: flex;
     top: 50px;
     justify-content: center;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
 }
+/* Clase para un título posicionado absolutamente.
+   Usa flexbox para centrar el contenido horizontal y verticalmente.
+   Posicionado a 50px desde la parte superior y centrado horizontalmente usando translate. */
 
-
-.hsorder{
+.hsorder {
     width: 50px;
     padding: 8px;
 }
+/* Clase para un elemento con un ancho de 50px y padding de 8px. */
 
-.hswhite{
+.hswhite {
     color: white;
 }
+/* Clase para cambiar el color del texto a blanco. */
 
-.hssize{
+.hssize {
     font-size: 15px;
 }
+/* Clase para establecer el tamaño de la fuente a 15px. */
 
-.hscenter{
-    text-align: center;  
-
+.hscenter {
+    text-align: center;
 }
+/* Clase para centrar el texto. */
 
-.hs-flex{
+.hs-flex {
     display: flex;
     justify-content: center;
-    padding: 30px;  
-}   
+    padding: 30px;
+}
+/* Clase para un contenedor flexible (flexbox) con el contenido centrado.
+   Agrega 30px de padding alrededor del contenedor. */

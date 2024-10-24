@@ -1,4 +1,4 @@
-.bg{
+.bg {
     top: 0;
     left: 0;
     width: 100%;
@@ -8,102 +8,121 @@
     justify-content: center;
     align-items: center;
 }
+/* Estilo para un fondo que ocupa toda la pantalla, con un degradado de izquierda a derecha. 
+   Utiliza flexbox para centrar su contenido tanto horizontal como verticalmente. */
 
-.margin-t-100{
+.margin-t-100 {
     margin-top: 160px !important;
 }
+/* Clase para agregar un margen superior de 160px, con !important para anular otros estilos. */
 
-.w-100{
+.w-100 {
     width: 100%;
     margin: 0 auto;
     align-content: center;
 }
+/* Clase para establecer un ancho completo, con margen auto para centrar horizontalmente 
+   y alinear el contenido al centro. */
 
-.img30{
+.img30 {
     width: 50px;
 }
+/* Clase para establecer el ancho de las imágenes a 50px. */
 
-.order{
+.order {
     width: 50px;
     padding: 8px;
 }
+/* Clase para establecer un ancho de 50px y padding de 8px. */
 
-.header{
+.header {
     position: absolute;
-    display: flex ;
+    display: flex;
     top: 50px;
     justify-content: center;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
 }
+/* Estilo para un encabezado centrado usando flexbox y transformaciones CSS, posicionado absolutamente. */
 
-.top-left{
+.top-left {
     position: absolute;
     width: 30px;
     top: 15px;
     left: 15px;
-    @media screen and (min-width: 650px) {
-        visibility: hidden;
-   }
 }
+@media screen and (min-width: 650px) {
+    .top-left {
+        visibility: hidden;
+    }
+}
+/* Clase para un ícono en la esquina superior izquierda, escondido en pantallas de al menos 650px de ancho. */
 
-.d-flex{
+.d-flex {
     display: flex;
     justify-content: center;
 }
+/* Clase para un contenedor con flexbox, centrando el contenido horizontalmente. */
 
-.img1{
+.img1 {
     width: 15px;
     height: 14px;
 }
+/* Clase para establecer dimensiones específicas para una imagen pequeña. */
 
-.green{
+.green {
     color: #85bb65;
 }
-.naranja{
+/* Clase para establecer el color del texto a verde (#85bb65). */
+
+.naranja {
     background-color: #fe8330 !important;
 }
+/* Clase para establecer un fondo naranja, con !important para anular otros estilos. */
 
-.td,th{
+.td, th {
     padding: 20px;
-
 }
+/* Clase para agregar padding de 20px a celdas y encabezados de tablas. */
 
-.white{
+.white {
     color: white;
 }
+/* Clase para establecer el color del texto a blanco. */
 
-.margin{
+.margin {
     margin-top: 30px;
 }
+/* Clase para agregar un margen superior de 30px. */
 
-.center{
+.center {
     text-align: center;
-    
-
 }
+/* Clase para centrar el texto. */
 
-mat-sidenav{
+mat-sidenav {
     width: 210px;
     background-color: rgb(48, 47, 47);
-
 }
+/* Clase para un menú lateral con ancho de 210px y un fondo gris oscuro. */
 
-.icon{
+.icon {
     position: absolute;
     width: 30px;
     height: 20px;
     top: 50px;
     right: 100px;
 }
+/* Clase para posicionar un ícono absolutamente en la esquina superior derecha. */
 
-mat-sidenav-container{
+mat-sidenav-container {
     height: 100%;
     background-color: transparent;
 }
+/* Clase para un contenedor de menú lateral con altura completa y fondo transparente. */
 
-.transparent{
+.transparent {
     padding: 0px;
     background-color: transparent;
     border: 2px solid darkgray;
@@ -111,3 +130,5 @@ mat-sidenav-container{
     border-radius: 25px;
     margin: 1rem;
 }
+/* Clase para un contenedor transparente con borde gris oscuro, 
+   un filtro de desenfoque en el fondo, borde redondeado y márgenes. */

@@ -1,51 +1,73 @@
-p{
+p {
   margin: 1rem 0px;
 }
 
-.blacked{
+/* Define el margen de los párrafos: 1rem en la parte superior e inferior, y 0px en los lados. */
+
+.blacked {
   color: black !important;
 }
 
-.whited{
+/* Clase para forzar el color de texto a negro, usando !important para anular otros estilos. */
+
+.whited {
   white-space: pre-line;
 }
 
-.dialog{
+/* Clase para el espacio en blanco, permitiendo saltos de línea y espacios múltiples. */
+
+.dialog {
   width: 14cm;
   text-align: center;
 }
 
+/* Clase para estilos de diálogos, con un ancho de 14cm y texto centrado. */
+
 @media screen and (max-width: 750px) {
-  .dialog{
+  .dialog {
     width: 8cm;
     text-align: center;
   }
 }
 
-.dialog-mini{
+/* Media query para pantallas menores de 750px de ancho: reduce el ancho de los diálogos a 8cm. */
+
+.dialog-mini {
   width: 6cm;
   text-align: center;
 }
 
+/* Clase para diálogos mini, con un ancho de 6cm y texto centrado. */
+
 @media screen and (max-width: 750px) {
-  .dialog-mini{
+  .dialog-mini {
     width: 6cm;
     text-align: center;
   }
 }
 
-.pink{
+/* Media query para pantallas menores de 750px de ancho: mantiene el ancho de los diálogos mini en 6cm. */
+
+.pink {
   background-color: #ffd5de;
 }
 
-.green{
+/* Clase para dar un fondo rosado (#ffd5de). */
+
+.green {
   background-color: #6add8e;
 }
 
-.bpink{
+/* Clase para dar un fondo verde (#6add8e). */
+
+.bpink {
   color: red !important;
 }
 
-.bgreen{
+/* Clase para forzar el color de texto a rojo, usando !important para anular otros estilos. */
+
+.bgreen {
   color: green !important;
 }
+
+/* Clase para forzar el color de texto a verde, usando !important para anular otros estilos. */

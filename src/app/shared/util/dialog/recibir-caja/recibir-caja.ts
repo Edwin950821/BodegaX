@@ -1,15 +1,43 @@
 import { Component, Inject } from "@angular/core";
+// Importa el decorador Component y la función Inject de Angular.
+
 import { FormBuilder } from "@angular/forms";
+// Importa FormBuilder de Angular Forms para construir formularios reactivos.
+
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
+// Importa varias utilidades de Angular Material Dialog:
+// MAT_DIALOG_DATA: Para inyectar datos en un diálogo.
+// MatDialog: Servicio para abrir diálogos.
+// MatDialogModule: Módulo para manejar diálogos de Angular Material.
+// MatDialogRef: Referencia a un diálogo abierto para interactuar con él.
+
 import { CommonModule } from "@angular/common";
+// Importa CommonModule que incluye directivas comunes de Angular como ngIf y ngFor.
+
 import { MatToolbarModule } from '@angular/material/toolbar';
+// Importa MatToolbarModule para usar la barra de herramientas de Angular Material.
+
 import { MatDialogContent } from '@angular/material/dialog';
+// Importa MatDialogContent para manejar el contenido dentro de los diálogos de Angular Material.
+
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+// Importa HttpClient para hacer solicitudes HTTP y HttpClientModule para configurar HttpClient en Angular.
+
 import { NgModule } from '@angular/core';
+// Importa NgModule que permite definir un módulo en Angular.
+
 import { MatFormFieldModule } from '@angular/material/form-field';
+// Importa MatFormFieldModule para utilizar campos de formulario de Angular Material.
+
 import { FormsModule } from '@angular/forms';
+// Importa FormsModule para trabajar con formularios template-driven.
+
 import { MatSelectModule } from '@angular/material/select';
+// Importa MatSelectModule para utilizar selectores de Angular Material.
+
 import { MaterialModule } from "../../../../material.module";
+// Importa un módulo personalizado MaterialModule desde una ruta relativa.
+
 
 
 // Definición de un tipo para las orientaciones, puede ser "p", "portrait", "l" o "landscape"
@@ -90,18 +118,18 @@ export class RecibirCaja {
 
   // Método para confirmar la acción en el diálogo
   confirmar() {
-    if(this.producto){
-      var selected = this.productos.find(p=> p.uuid == this.producto)
+    if (this.producto) {
+      var selected = this.productos.find(p => p.uuid == this.producto)
       selected.stock = selected.stock + this.quantity
-      this.http.put("http://localhost:8080/productos/edit", selected).subscribe(res=>{
+      this.http.put("http://localhost:8080/productos/edit", selected).subscribe(res => {
         this.mydialog.close(selected); // Cierra el diálogo y devuelve true
       })
-    }else{
+    } else {
       this.mydialog.close(false); // Cierra el diálogo y devuelve false
 
     }
-    
-    
+
+
   }
 
 
