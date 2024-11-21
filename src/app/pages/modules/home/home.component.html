@@ -1,7 +1,15 @@
 <div class="bg"> <!-- Div principal con clase para el fondo -->
     <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
     <!-- Imagen para el menú superior izquierdo con un evento de clic para abrir una barra lateral -->
-    <img src="/assets/icon.png" class="icon"> <!-- Imagen de icono principal -->
+    <span *ngIf="shouldShowUserName" class="icon-text">{{user.nombre}}</span><img src="/assets/icon.png" class="icon">
+    <!-- Imagen de icono principal -->
+
+
+    <!-- Sidebar -->
+    <div *ngIf="sidebarOpen" class="sidebar">
+        <!-- Contenido del sidebar -->
+    </div>
+
 
     <mat-card class="transparent"> <!-- Componente de tarjeta Angular Material con clase de transparencia -->
         <mat-card-content class="center"> <!-- Contenido de la tarjeta, centrado -->
@@ -16,9 +24,14 @@
                     <b *ngIf="role=='admin'">Total de cajas Vendidas</b> <!-- Texto en negrita para administradores -->
                     <b *ngIf="role=='user'">Total de cajas solicitadas</b> <!-- Texto en negrita para usuarios -->
                     <h1>15</h1> <!-- Número de cajas -->
-                    <button (click)="solicitarCajas()" mat-raised-button color="primary" class="blue">Despachar
-                        Caja</button> <!-- Botón para despachar caja con evento de clic -->
+                    <button  (click)="solicitarCajas()" mat-raised-button color="primary"
+                        class="blue" >{{ buttonRole }}</button>
+                    <!-- Botón para despachar caja con evento de clic para  -->
+
+                   
                 </div>
+
+
 
                 <div class="center margin"> <!-- Div centrado con margen -->
                     <p>Detalles</p> <!-- Texto de detalles -->
@@ -50,10 +63,14 @@
                     <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet">
                         <!-- Botón para terminar jornada con evento de clic -->
                         <img src="/assets/terminar.png" class="img1"> <!-- Imagen en el botón -->
+
+
                         Terminar Jornada
                     </button>
+
                 </div>
             </div>
+
 
         </mat-card-content>
     </mat-card>

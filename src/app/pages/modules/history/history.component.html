@@ -4,7 +4,7 @@
     <img src="/assets/menu.png" class="htop-left" (click)="openSidebar()">
 
     <!-- Imagen ícono en la esquina superior derecha (clase hsicn) -->
-    <img src="/assets/icon.png" class="hsicn">
+    <span *ngIf="shouldShowUserName" class="hicon-text">{{user2.nombre}}</span><img src="/assets/icon.png" class="hsicn">
 
     <!-- Tarjeta de Angular Material con fondo transparente -->
     <mat-card class="transparent">
@@ -19,14 +19,15 @@
                 <!-- Texto del título "Historial", en color blanco (hswhite) -->
                 <h1 class="hswhite"> Historial </h1>
             </div>
+            <br>
 
             <!-- Contenedor para alinear el contenido al centro con un ancho del 100% -->
-            <div class="hs-100">
+            <div class="hs-100 scroll">
 
                 <!-- Contenedor flexible que organiza los elementos de la tabla -->
                 <div class="hs-flex">
                     <!-- Tabla que muestra el historial de ventas -->
-                    <table>
+                    <table >
                         <!-- Fila de encabezado de la tabla -->
                         <tr>
                             <th *ngIf="role == 'admin'"> Cliente </th> <!-- Columna para el nombre del cliente -->
@@ -80,7 +81,7 @@
                                     </td>
                                     <!-- En esta celda (td), se muestra el nombre del producto accediendo a la propiedad 'producto' de cada objeto 'detalle'. -->
 
-                                    <td>
+                                    <td>  
                                         {{detalle.cantidad}}
                                     </td>
                                     <!-- Aquí se muestra la cantidad del producto accediendo a la propiedad 'Cantidad' de cada objeto 'detalle'. -->

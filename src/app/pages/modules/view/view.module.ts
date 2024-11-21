@@ -11,6 +11,7 @@ import { ViewComponent } from './view.component';
 // Importa el componente ViewComponent desde su ruta relativa.
 
 import { MaterialModule } from '../../../material.module';
+import { FormsModule } from '@angular/forms';
 // Importa un módulo personalizado llamado MaterialModule que probablemente contiene componentes de Angular Material.
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MaterialModule } from '../../../material.module';
     ViewRoutingModule,
     // Importa el módulo de enrutamiento específico para este módulo.
     
-    MaterialModule
+    MaterialModule,
+    FormsModule
     // Importa el módulo personalizado de Material que probablemente contiene componentes de Angular Material.
   ]
 })

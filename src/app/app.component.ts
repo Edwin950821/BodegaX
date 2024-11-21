@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from './app.service';
 
+
+
 @Component({
   selector: 'app-root', // Define el selector para usar este componente en el HTML.
   templateUrl: './app.component.html', // Indica el archivo de plantilla HTML asociado con este componente.
   styleUrls: ['./app.component.css'] // Indica el archivo de estilos CSS asociado con este componente.
 })
+
 export class AppComponent implements OnInit{
   title = 'BodegaX-angular';
   role = 'client'

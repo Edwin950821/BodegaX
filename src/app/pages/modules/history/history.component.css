@@ -20,6 +20,11 @@
     /* Asegura que la imagen cubra todo el área */
 }
 
+.scroll{
+    overflow: auto;
+    height: 350px;
+}
+
 /* Clase para un contenedor con gradiente de fondo */
 .hbr {
     top: 0;
@@ -58,6 +63,27 @@
     /* Se posiciona a 50px desde la parte superior */
     right: 100px;
     /* Se posiciona a 100px desde la derecha */
+    @media screen and (max-width: 750px) {
+        top: 20px;
+            right: 30px;
+      }
+}
+
+.hicon-text {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    top: 50px;
+    right: 130px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    z-index: 10;
+
+    @media screen and (max-width: 750px) {
+        top: 20px;
+            right: 60px;
+      }
 }
 
 /* Clase para centrar un título */
@@ -76,6 +102,7 @@
     /* Corrige el desplazamiento para que esté perfectamente centrado */
     align-items: center;
     /* Centra verticalmente */
+    
 }
 
 /* Clase para definir el ancho y el espaciado de un contenedor */
@@ -149,7 +176,7 @@
     /* Uso de flexbox */
     justify-content: center;
     /* Centrado horizontal */
-    align-items: center;
+    align-items: end;
     /* Centrado vertical */
     height: 100%;
     /* Ocupa todo el alto del contenedor padre */

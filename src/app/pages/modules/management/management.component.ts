@@ -27,6 +27,12 @@ import { RecibirCaja } from '../../../shared/util/dialog/recibir-caja/recibir-ca
 export class ManagementComponent implements OnInit {
   // Define la clase del componente e implementa la interfaz OnInit.
 
+  sidebarOpen: boolean = true;  // Inicializa 'sidebarOpen' en 'true', indicando que el sidebar está abierto de forma predeterminada. Se utilizará para alternar la visibilidad del sidebar.
+  isMobile: boolean = window.innerWidth <= 768;  // Inicializa 'isMobile' en función del ancho actual de la pantalla. Si el ancho es menor o igual a 768px, se considera una pantalla móvil (true); de lo contrario, será false.
+
+  user3 = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}");
+  //Metodo que se utiliza para traer el usuario se inicio de sesion en la parte superior derecha 
+
   [x: string]: any;
   // Permite el uso de propiedades indexadas.
 
@@ -45,8 +51,27 @@ export class ManagementComponent implements OnInit {
   total = 0;
   // Propiedad para almacenar el total de productos, inicializada en 0.
 
-  constructor(private http: HttpClient, private appSvc: AppService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private appSvc: AppService, private dialog: MatDialog) {
+
+    // Detecta cambios en el tamaño de la pantalla
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 768;
+
+
+
+      checkScreenSize(); {
+        this.isMobile = window.innerWidth <= 768;
+      }
+
+    });
+
+
+  }
   // Constructor que inyecta HttpClient, AppService y MatDialog.
+
+  get shouldShowUserName(): boolean {
+    return !this.sidebarOpen || !this.isMobile || window.innerWidth > 768;
+  }
 
   ngOnInit(): void {
     // Método de ciclo de vida que se ejecuta al inicializar el componente.
@@ -78,6 +103,8 @@ export class ManagementComponent implements OnInit {
 
   openSidebar() {
     this.appSvc.toggleSidebar();
+    this.sidebarOpen = !this.sidebarOpen;
+
     // Método para abrir la barra lateral utilizando AppService.
   }
 
@@ -102,3 +129,7 @@ export class ManagementComponent implements OnInit {
     });
   }
 }
+function checkScreenSize() {
+  throw new Error('Function not implemented.');
+}
+

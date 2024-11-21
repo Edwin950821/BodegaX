@@ -2,7 +2,7 @@
 
     <img src="/assets/menu.png" class="stop-left" (click)="openSidebar()">
 
-    <img src="/assets/icon.png" class="icn"> <!-- Icono superior derecho -->
+    <span *ngIf="shouldShowUserName" class="sicon-text">{{user5.nombre}}</span><img src="/assets/icon.png" class="ssicn"> <!-- Icono superior derecho -->
 
     <div class="center stitle"> <!-- Contenedor centrado para el título -->
         <img src="/assets/setting.png" class="sorder"> <!-- Icono de configuración -->

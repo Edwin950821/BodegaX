@@ -11,11 +11,35 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class OrdersComponent {
 
-  constructor(private appSvc: AppService, private dialog: MatDialog) { }
+  sidebarOpen: boolean = true;  // Inicializa 'sidebarOpen' en 'true', indicando que el sidebar está abierto de forma predeterminada. Se utilizará para alternar la visibilidad del sidebar.
+  isMobile: boolean = window.innerWidth <= 768; // Inicializa 'isMobile' en función del ancho actual de la pantalla. Si el ancho es menor o igual a 768px, se considera una pantalla móvil (true); de lo contrario, será false.
 
-  openSidebar() {
-    this.appSvc.toggleSidebar()
-  } // Clase del componente
+  user4 = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}");
+
+  constructor(private appSvc: AppService, private dialog: MatDialog) {
+
+    // Detecta cambios en el tamaño de la pantalla
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 768;
+
+
+
+      checkScreenSize(); {
+        this.isMobile = window.innerWidth <= 768;
+      }
+
+    });
+
+
+  }
+
+
+
+
+
+  get shouldShowUserName(): boolean {
+    return !this.sidebarOpen || !this.isMobile || window.innerWidth > 768;
+  }
 
   logged: any; // Variable que puede almacenar información sobre el estado de inicio de sesión (no inicializada)
 
@@ -24,8 +48,23 @@ export class OrdersComponent {
     throw new Error('Method not implemented.'); // Lanza un error indicando que el método no está implementado
   }
 
+  openSidebar() {
+    // Método para abrir la barra lateral utilizando AppService.
+    this.appSvc.toggleSidebar();
+    this.sidebarOpen = !this.sidebarOpen;
+
+  }
+
+
+
+
   // Método que puede ser utilizado para ver detalles o información adicional
   ver() {
 
   }
 }
+
+function checkScreenSize() {
+  throw new Error('Function not implemented.');
+}
+

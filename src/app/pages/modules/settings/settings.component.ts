@@ -12,14 +12,15 @@ import { AppService } from '../../../app.service';
 })
 export class SettingsComponent implements OnInit {
 
+  sidebarOpen: boolean = true; // Inicializa 'sidebarOpen' en 'true', indicando que el sidebar está abierto de forma predeterminada. Se utilizará para alternar la visibilidad del sidebar.
+  isMobile: boolean = window.innerWidth <= 768; // Inicializa 'isMobile' en función del ancho actual de la pantalla. Si el ancho es menor o igual a 768px, se considera una pantalla móvil (true); de lo contrario, será false.
+
   usuarios: any; // Declara una variable para almacenar la lista de usuarios.
+
+  user5 = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}");
+  
   
 
-  constructor(private dialog: MatDialog, private http: HttpClient, private appSvc: AppService) { } // Inyecta los servicios MatDialog y HttpClient.
-
-  openSidebar() {
-    this.appSvc.toggleSidebar()
-  } // Clase del componente
 
   ngOnInit(): void { // Método que se llama cuando se inicializa el componente.
     this.getUsers(); // Llama a la función para obtener la lista de usuarios.
@@ -62,6 +63,28 @@ export class SettingsComponent implements OnInit {
    
   }
 
+  constructor(private dialog: MatDialog, private http: HttpClient, private appSvc: AppService) { 
+    
+      // Detecta cambios en el tamaño de la pantalla
+      window.addEventListener('resize', () => {
+        this.isMobile = window.innerWidth <= 768;
+  
+  
+  
+        checkScreenSize(); {
+          this.isMobile = window.innerWidth <= 768;
+        }
+  
+      });
+    
+  } // Inyecta los servicios MatDialog y HttpClient.
+
+  get shouldShowUserName(): boolean {
+    return !this.sidebarOpen || !this.isMobile || window.innerWidth > 768;
+  }
+
+
+
   eliminar(user: any) { // Método para eliminar un usuario.
     var res = this.dialog.open(ConfirmDialog, { data: { title: "Estas seguro que desea eliminar este registro?" } }); // Abre un diálogo de confirmación.
     res.afterClosed().subscribe(r => { // Después de cerrar el diálogo, verifica si se confirmó la eliminación.
@@ -74,4 +97,17 @@ export class SettingsComponent implements OnInit {
 
    
   }
+
+
+  openSidebar() {
+    this.appSvc.toggleSidebar();
+    this.sidebarOpen = !this.sidebarOpen;
+
+    // Método para abrir la barra lateral utilizando AppService.
+  }
+
 }
+function checkScreenSize() {
+  throw new Error('Function not implemented.');
+}
+

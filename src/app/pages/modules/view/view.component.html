@@ -1,7 +1,8 @@
 <div class="bg">
     <!-- Div principal con clase para el fondo -->
-    <img src="/assets/icon.png" class="icon">
+    <span class="vicon-text">{{user4.nombre}}</span><img src="/assets/icon.png" class="vsicn">
     <!-- Imagen de icono principal con clase 'icon' -->
+    <img src="/assets/menu.png" class="top-left" (click)="openSidebar()"> <!-- Imagen para el menú superior izquierdo con un evento de clic para abrir una barra lateral -->
 
     <div class="center title">
         <!-- Encabezado centrado con clase 'title' -->
@@ -23,7 +24,16 @@
                     <th>Marca</th>
                     <th>Cantidad (cajas)</th>
                     <th>Total</th>
-                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                </tr>
+
+                <tr *ngFor="let marca of productos">
+                    <td>{{marca.nombre}}</td>
+                    <td>
+                        <mat-form-field class="w-50">
+                            <input matInput class="w-50" type="number" max="{{marca.total_parcial}}" [(ngModel)]="marca.quantity">
+                        </mat-form-field>
+                    </td>
+                    <td>{{marca.total_parcial}}</td>
                 </tr>
                 <!-- Encabezados de columna para la tabla -->
                 <tr class="center">

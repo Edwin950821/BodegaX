@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hsale',
-  templateUrl: './hsale.component.html',
+  templateUrl: './hsale.html',
   styleUrl: './hsale.component.css'
 })
 export class HsaleComponent {

@@ -1,0 +1,33 @@
+<div>
+    <!-- Contenido del cuadro de diálogo, con clase personalizada 'utransparent' para hacer el fondo transparente -->
+    <mat-dialog-content class="dialog">
+        <!-- Icono de cierre del cuadro de diálogo, posicionado en la esquina superior derecha -->
+        <mat-icon style="cursor: pointer; position: absolute; top: 10px; right: 10px;" mat-dialog-close>
+            X
+        </mat-icon>
+        <!-- Contenedor centrado -->
+        <div class="scenter">
+            <!-- Campo de formulario con la clase 'umini', centrado -->
+            <mat-form-field class="umini" align="center">
+                <mat-label class="umini, p-user">
+                    Cliente <!-- Texto que indica al usuario qué debe ingresar -->
+                </mat-label>
+                <mat-select matInput [(ngModel)]="clienteSelected">
+                    <mat-option *ngFor="let client of clientes" [value]="client.uuid">{{client.nombre}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <!-- Sección de acciones dentro del cuadro de diálogo, alineadas al centro -->
+            <mat-dialog-actions align="center">
+                <!-- Botón de confirmación con una clase personalizada para el estilo, llama a la función 'confirmar()' -->
+                <div>
+                    <button (click)="confirmar()" mat-raised-button class="margin sblue" rel="stylesheet">Descargar</button>
+                </div>
+                <!-- Botón de cancelación, llama a la función 'cancel()' -->
+                <div>
+                    <button (click)="cancel()" mat-raised-button rel="stylesheet">Cancelar</button>
+                </div>
+            </mat-dialog-actions>
+        </div>
+    </mat-dialog-content>
+</div>

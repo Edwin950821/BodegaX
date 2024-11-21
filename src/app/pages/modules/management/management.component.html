@@ -1,5 +1,5 @@
 <div class="bg"> <!-- Div principal con clase para el fondo -->
-    <img src="/assets/icon.png" class="icon"> <!-- Imagen de icono principal con clase 'icon' -->
+    <span *ngIf="shouldShowUserName" class="micon-text">{{user3.nombre}}</span><img src="/assets/icon.png" class="msicn"> <!-- Imagen de icono principal con clase 'icon' -->
     <img src="/assets/menu.png" class="top-left" (click)="openSidebar()"> <!-- Imagen para el menú superior izquierdo con un evento de clic para abrir una barra lateral -->
 
     <mat-card class="transparent"> <!-- Tarjeta de Angular Material con clase de transparencia -->

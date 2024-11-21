@@ -81,8 +81,9 @@ export class DespacharCaja {
       }
     })
 
-    if (totalVenta == 0) {
-      this.mydialog.close(true);
+    if (totalVenta == 0 || this.clienteSelected == '') {
+      window.alert('Debe escoger cliente y la venta no puede ser 0')
+      return
     }
 
 
@@ -107,7 +108,9 @@ export class DespacharCaja {
                 precio: p.precio,
                 stock: p.stock - p.quantity
               }).subscribe((res3: any) => {
-                if (i == this.productos.length - 1) {
+                console.log(i)
+
+                if (i == this.productos.filter(pr => pr.quantity > 0).length - 1) {
                   this.mydialog.close(true);
                 }
 

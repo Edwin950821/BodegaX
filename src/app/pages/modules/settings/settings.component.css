@@ -45,6 +45,39 @@
     /* Centra el contenido verticalmente */
 }
 
+ /* Clase para posicionar un ícono */
+ .ssicn {
+    position: absolute;
+    /* Posiciona el ícono de manera absoluta en relación a su contenedor */
+    width: 30px;
+    height: 20px;
+    top: 50px;
+    /* Se posiciona a 50px desde la parte superior */
+    right: 100px;
+    /* Se posiciona a 100px desde la derecha */
+    @media screen and (max-width: 750px) {
+        top: 20px;
+            right: 30px;
+      }
+  }
+  
+  .sicon-text {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    top: 50px;
+    right: 130px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    z-index: 10;
+  
+    @media screen and (max-width: 750px) {
+        top: 20px;
+            right: 60px;
+      }
+  }
+
 .sorder {
     width: 50px;
     /* Establece el ancho del elemento de orden */

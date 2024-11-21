@@ -4,7 +4,7 @@
     <img src="/assets/menu.png" class="top-left" (click)="openSidebar()">
     
     <!-- Icono que se posiciona en la parte superior derecha -->
-    <img src="/assets/icon.png" class="icon">
+    <span *ngIf="shouldShowUserName" class="oicon-text">{{user4.nombre}}</span><img src="/assets/icon.png" class="osicn">
 
     <!-- Tarjeta que contiene el contenido principal, con un fondo transparente -->
     <mat-card class="transparent">
