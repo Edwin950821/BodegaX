@@ -1,7 +1,7 @@
 mat-sidenav{
     width: 210px;
     color: white;
-    background-color: rgb(73, 71, 71);
+    background-color: rgb(73, 71, 71); 
 }
 
 mat-sidenav-container{
@@ -9,7 +9,7 @@ mat-sidenav-container{
 
 }
 
-.sidebar-text{
+.sidebar-text{ 
     padding:0px 5px;
     cursor: pointer;
     text-align: center;

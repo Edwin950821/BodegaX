@@ -40,7 +40,7 @@ export class DespacharCaja {
 
   clienteSelected = ''
 
-  myUser = JSON.parse(sessionStorage.getItem("bodegax") || "{'uuid': ''}").uuid;
+  myUser = JSON.parse(sessionStorage.getItem("bodegax") || "{'uuid': ''}").uuid; // Variable que almacena el usuario actual
 
 
   // Constructor del componente
@@ -72,54 +72,63 @@ export class DespacharCaja {
     this.mydialog.close(false); // Cierra el diálogo y devuelve 'false' para indicar que la acción fue cancelada
   }
 
+  validVenta(): number { // Método que valida la venta
+    var totalVenta = 0
+    for (const p of this.productos) {// Recorre los productos
+      if (p.quantity > 0) {// Si la cantidad es mayor a 0
+        totalVenta += (p.precio * p.quantity)// Calcula el total de la venta
+      }
+      if (p.quantity > p.stock) {// Si la cantidad es mayor al stock
+        window.alert('No hay en stock la cantidad solicitada')
+        return 0
+      }
+    }
+
+    if (totalVenta == 0 || this.clienteSelected == '') {// Si la venta es 0 o no se ha seleccionado un cliente
+      window.alert('Debe escoger cliente y la venta no puede ser 0')
+      return 0
+    } else {
+      return totalVenta // Devuelve el total de la venta
+    }
+  }
   // Método que se llama al hacer clic en el botón de confirmar
   confirmar() {
-    var totalVenta = 0
-    this.productos.forEach(p => {
-      if (p.quantity > 0) {
-        totalVenta += (p.precio * p.quantity)
-      }
-    })
+    const cant = this.validVenta()
+    if (cant > 0) {
+      this.http.post("http://localhost:8080/ventas/create", {
+        uuid_admin: this.myUser, // Asigna el usuario actual
+        uuid_cliente: this.clienteSelected, // Asigna el cliente seleccionado
+        total_venta: cant, // Asigna el total de la venta
+        fecha: new Date() // Asigna la fecha actual
+      }).subscribe((res: any) => {// Realiza una petición POST al servidor
+        if (res) { // Si la respuesta es correcta
+          this.productos.forEach((p: any, i) => { // Recorre los productos
+            if (p.quantity > 0) { // Si la cantidad es mayor a 0
+              this.http.post("http://localhost:8080/producto-ventas/create", { // Realiza una petición POST al servidor
+                uuid_producto: p.uuid, // Asigna el UUID del producto
+                uuid_venta: res.uuid, // Asigna el UUID de la venta
+                cantidad: p.quantity, // Asigna la cantidad
+                total_parcial: (p.quantity * p.precio) // Calcula el total parcial
+              }).subscribe((res2: any) => { // Realiza una petición POST al servidor
+                this.http.put("http://localhost:8080/productos/edit", {
+                  uuid: p.uuid, // Asigna el UUID del producto
+                  nombre: p.nombre, // Asigna el nombre del producto
+                  precio: p.precio, // Asigna el precio del producto
+                  stock: p.stock - p.quantity // Resta la cantidad vendida al stock
+                }).subscribe((res3: any) => { // Realiza una petición PUT al servidor
 
-    if (totalVenta == 0 || this.clienteSelected == '') {
-      window.alert('Debe escoger cliente y la venta no puede ser 0')
-      return
+                  if (i == this.productos.filter(pr => pr.quantity > 0).length - 1) {
+                    this.mydialog.close(true); // Cierra el diálogo y devuelve 'true' para indicar que la acción fue confirmada
+                  }
+
+                })
+              })
+            }
+          })
+        }
+      })
     }
 
 
-    this.http.post("http://localhost:8080/ventas/create", {
-      uuid_admin: this.myUser,
-      uuid_cliente: this.clienteSelected,
-      total_venta: totalVenta,
-      fecha: new Date()
-    }).subscribe((res: any) => {
-      if (res) {
-        this.productos.forEach((p: any, i) => {
-          if (p.quantity > 0) {
-            this.http.post("http://localhost:8080/producto-ventas/create", {
-              uuid_producto: p.uuid,
-              uuid_venta: res.uuid,
-              cantidad: p.quantity,
-              total_parcial: (p.quantity * p.precio)
-            }).subscribe((res2: any) => {
-              this.http.put("http://localhost:8080/productos/edit", {
-                uuid: p.uuid,
-                nombre: p.nombre,
-                precio: p.precio,
-                stock: p.stock - p.quantity
-              }).subscribe((res3: any) => {
-                console.log(i)
-
-                if (i == this.productos.filter(pr => pr.quantity > 0).length - 1) {
-                  this.mydialog.close(true);
-                }
-
-              })
-            })
-          }
-        })
-      }
-    })
-    // Cierra el diálogo y devuelve 'true' para indicar que la acción fue confirmada
   }
 }

@@ -3,9 +3,9 @@ import { AppService } from '../../../app.service'; // Importa AppService de su r
 import { MatDialog, } from '@angular/material/dialog'; // Importa MatDialog de Angular Material.
 import { DespacharCaja } from '../../../shared/util/despachar-caja/despachar-caja'; // Importa el componente DespacharCaja.
 import { HttpClient } from '@angular/common/http'; // Importa HttpClient de Angular para hacer solicitudes HTTP.
-import { FormBuilder } from '@angular/forms';
-import { TerminarJornada } from '../../../shared/util/terminar/terminar-jornada';
-import { SolicitarCaja } from '../../../shared/util/solicitar-caja/solicitar-caja';
+import { FormBuilder } from '@angular/forms'; // Importa FormBuilder de Angular para crear formularios.
+import { TerminarJornada } from '../../../shared/util/terminar/terminar-jornada'; // Importa el componente TerminarJornada.
+import { SolicitarCaja } from '../../../shared/util/solicitar-caja/solicitar-caja'; // Importa el componente SolicitarCaja.
 
 
 
@@ -34,10 +34,10 @@ export class HomeComponent {
   open: any;
 
 
-  user = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}");
-click: any;
+  user = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}"); // Obtiene el usuario almacenado en sessionStorage o un objeto vacío si no hay usuario.
+click: any; // Propiedad para almacenar el evento click.
 
-  constructor(private appSvc: AppService, private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) {
+  constructor(private appSvc: AppService, private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) {// Inyecta AppService, MatDialog, HttpClient y FormBuilder.
 
     // Detecta cambios en el tamaño de la pantalla
     window.addEventListener('resize', () => {
@@ -70,11 +70,14 @@ click: any;
   solicitarCajas() {
     // Método para abrir el diálogo de solicitar cajas.
     console.log(`${this.role === 'admin' ? 'El admin' : 'El usuario'} está realizando una acción con las cajas.`);
-
-    this.dialog.open(SolicitarCaja, {
+    var clients = this.clientes // Filtra los clientes según el rol del usuario.
+    if(this.user.role === 'user'){
+      clients = this.clientes.filter(i=> i.uuid === this.user.uuid)// Filtra los clientes según el UUID del usuario.
+    }
+    this.dialog.open(DespacharCaja, {// Abre el diálogo de despachar caja.
       data: {
         title: '',
-        clientes: this.clientes,
+        clientes: clients,
         productos: this.productos
       }
 
@@ -84,19 +87,21 @@ click: any;
     
   }
 
-  terminar() {
+  terminar() {// Método placeholder para finalizar alguna acción.
+
+    var clients = this.clientes
 
     this.dialog.open(TerminarJornada, {
       data: {
         title: '',
-        clientes: this.clientes
+        clientes: clients
       },
 
 
     });
 
   }
-  // Método placeholder para finalizar alguna acción.
+  
 
 
 
@@ -117,10 +122,11 @@ click: any;
   // Método placeholder, posiblemente para manejar iconos en el futuro.
 
   get buttonRole(): string {
-    return this.role === 'admin' ? 'Solicitar Caja' : 'Despachar Caja';
+    return this.user.role === 'user' ? 'Solicitar Caja' : 'Despachar Caja';
 }
 }
-function checkScreenSize() {
+
+function checkScreenSize() {// Función para verificar el tamaño de la pantalla.
   throw new Error('Function not implemented.');
 }
 

@@ -57,7 +57,7 @@ p {
 
 .uwhite {
  background-color: #d8cece ; 
-}
+} /* Establece un color de fondo gris claro. */
 
 
 .ublue {
@@ -103,7 +103,7 @@ p {
 
 .umargin{
   margin-right: 30px;
-}
+} /* Aplica un margen derecho de 30 píxeles a los elementos con esta clase. */
 
 .center-button {
   padding: 10px, 20px;

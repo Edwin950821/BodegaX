@@ -97,7 +97,7 @@ export class RecibirCaja {
 
     this.productos = data.productos
 
-    console.log(data)
+
 
     // Verifica si se debe aplicar una clase para un diálogo pequeño
     if (data.size) {

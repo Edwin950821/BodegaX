@@ -53,6 +53,24 @@
     /* Centrado vertical */
 }
 
+.hcenter {
+    text-align: center;
+}
+/* Clase para centrar el texto. */
+
+
+.himg1 {
+    width: 15px;
+    height: 14px;
+}
+/* Clase para establecer dimensiones específicas para una imagen pequeña. */
+
+
+.hnaranja {
+    background-color: #fe8330 !important;
+}
+/* Clase para establecer un fondo naranja, con !important para anular otros estilos. */
+
 /* Clase para posicionar un ícono */
 .hsicn {
     position: absolute;
@@ -104,6 +122,8 @@
     /* Centra verticalmente */
     
 }
+
+
 
 /* Clase para definir el ancho y el espaciado de un contenedor */
 .hsorder {

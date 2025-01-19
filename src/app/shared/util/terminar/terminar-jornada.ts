@@ -41,6 +41,8 @@ import { MaterialModule } from "../../../../../src/app/material.module";
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable'
 
+const myUser = JSON.parse(sessionStorage.getItem("bodegax") || "{'uuid': ''}");
+
 
 
 // Definición de un tipo para las orientaciones, puede ser "p", "portrait", "l" o "landscape"
@@ -83,16 +85,17 @@ export class TerminarJornada {
   password: any;
 
 
-  clientes: any[] = []
-  productos: any[] = []
+  clientes: any[] = [] // Array de clientes
+  productos: any[] = [] // Array de productos
 
-  clienteSelected = ''
+  clienteSelected = '' // Cliente seleccionado
 
-  myUser = JSON.parse(sessionStorage.getItem("bodegax") || "{'uuid': ''}");
 
-  client: any[] = []
-  history: any[] = []
-  productoventas: any[] = []
+
+  client: any[] = [] // Array de clientes
+  history: any[] = [] // Array de ventas
+  productoventas: any[] = [] // Array de productos vendidos
+  myUser = JSON.parse(sessionStorage.getItem("bodegax") || "{'uuid': ''}"); // Usuario actual
 
   // Constructor del componente
   constructor(
@@ -126,6 +129,7 @@ export class TerminarJornada {
           (res: any) => { // Callback que maneja la respuesta de las ventas.
             this.history = res; // Asigna los datos de las ventas a la variable 'history'.
             console.log(this.history); // Muestra el historial de ventas en la consola.
+            console.log(this.client)
 
             // Recorre cada venta para asociar el nombre del cliente.
             this.history.forEach((venta: any) => {
@@ -148,8 +152,9 @@ export class TerminarJornada {
                       pr.producto = this.productos.find(c => c.uuid == pr.uuid_producto).nombre;
                     });
 
-                    this.history.forEach((venta: any) => {
-                      venta.detalle = this.productoventas.filter(c => c.uuid_venta == venta.uuid)
+                    this.history.forEach((venta: any) => {// Recorre cada venta para asociar los productos vendidos.
+
+                      venta.detalle = this.productoventas.filter(c => c.uuid_venta == venta.uuid) // Filtra los productos vendidos por venta.
                     })
                   }
                 )
@@ -168,6 +173,8 @@ export class TerminarJornada {
   cancel() {
     this.mydialog.close(false); // Cierra el diálogo y devuelve 'false' para indicar que la acción fue cancelada
   }
+
+
 
 
   confirmar() { // Método que se llama al hacer clic en el botón de confirmar
@@ -191,19 +198,21 @@ export class TerminarJornada {
       console.error('El usuario no encontrado.');
       return;
     } // Informacion de usario
-    
-      // Información del cliente
-  const client = this.clientes.find((c) => c.uuid === this.clienteSelected);
-  if (!client) {
-    console.error('El cliente seleccionado no fue encontrado.');
-    return;
-  }
+
+    // Información del cliente
+    const client = this.clientes.find((c) => c.uuid === this.clienteSelected);
+    if (!client) {
+      console.error('El cliente seleccionado no fue encontrado.');
+      return;
+    }
+
+    console.log(user)
 
     doc.text(user.nombre, w / 2, 10, { align: 'center' }); // Agrega texto al documento PDF, centrado en la posición horizontal (w/2) y con una alineación especificada
     doc.text(user.id, w / 2, 20, { align: 'center' }); // Este texto corresponde a información del usuario: nombre, ID y dirección
     doc.text(user.direccion, w / 2, 30, { align: 'center' });
 
-    
+
 
     let cliente = this.clientes.find(c => c.uuid == this.clienteSelected) // Busca un cliente específico en la lista de clientes, utilizando el identificador seleccionado (clienteSelected)
 
@@ -212,21 +221,22 @@ export class TerminarJornada {
     doc.text(`ID Cliente: ${client.uuid}`, 20, 50);
 
     // Filtrar ventas del cliente
-  const venta = this.history.filter((v) => v.uuid_cliente === this.clienteSelected);
-  if (venta.length === 0) {
-    console.warn('No hay ventas asociadas al cliente seleccionado.');
-    doc.text('No hay ventas registradas para este cliente.', 20, 60);
-    doc.save('Jornada.pdf');
-    return;
-  }
+    const venta = this.history.filter((v) => v.uuid_cliente === this.clienteSelected);
+    if (venta.length === 0) {
+      console.warn('No hay ventas asociadas al cliente seleccionado.');
+      doc.text('No hay ventas registradas para este cliente.', 20, 60);
+      doc.save('Jornada.pdf');
+      return;
+    }
 
-  
+
 
     let ventas = this.history.filter(v => v.uuid_cliente == this.clienteSelected) // Filtra las ventas históricas para obtener solo aquellas asociadas al cliente seleccionado
 
     let rows: any[] = [] // Inicializa un arreglo vacío para almacenar las filas que serán agregadas al PDF
     let myMap = new Map(); // Inicializa un mapa para consolidar los productos vendidos
     ventas.forEach(v => {  // Recorre las ventas asociadas al cliente seleccionado
+      console.log(v)
       v.detalle.forEach((d: any) => {   // Itera sobre los detalles de cada venta
 
         if (myMap.has(d.producto)) {  // Si el producto ya existe en el mapa, actualiza su cantidad total y el total parcial

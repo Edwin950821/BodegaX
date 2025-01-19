@@ -48,7 +48,7 @@
       .top-bar-icons {
         display: block;
       }
-}
+} /* Clase para posicionar un texto absolutamente en la esquina superior derecha. */
 
 .order {
     width: 50px;

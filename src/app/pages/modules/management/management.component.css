@@ -1,46 +1,51 @@
 .bg {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, #333, #777);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  /* Clase para un contenedor que ocupa toda la pantalla.
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #333, #777);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Clase para un contenedor que ocupa toda la pantalla.
      Aplica un fondo degradado de #333 a #777.
      Utiliza flexbox para centrar su contenido. */
-  
-  .w-100 {
-    width: 100%;
-    margin: 0 auto;
-    align-content: center;
-  }
-  /* Clase para un contenedor de ancho completo, centrado horizontalmente.
+
+.w-100 {
+  width: 100%;
+  margin: 0 auto;
+  align-content: center;
+}
+
+/* Clase para un contenedor de ancho completo, centrado horizontalmente.
      El contenido se alinea al centro. */
-  
-  .top-left {
-    position: absolute;
-    width: 30px;
-    top: 15px;
-    left: 15px;
-    @media screen and (min-width: 650px) {
-      visibility: hidden;
-    }
+
+.top-left {
+  position: absolute;
+  width: 30px;
+  top: 15px;
+  left: 15px;
+
+  @media screen and (min-width: 650px) {
+    visibility: hidden;
   }
-  /* Posiciona un elemento en la esquina superior izquierda.
+}
+
+/* Posiciona un elemento en la esquina superior izquierda.
      Se oculta en pantallas con un ancho mínimo de 650px. */
-  
-  .d-flex {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-  }
-  /* Aplica flexbox para centrar el contenido y agrega un padding de 30px. */
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* Aplica flexbox para centrar el contenido y agrega un padding de 30px. */
 
 
-  /* Clase para posicionar un ícono */
+/* Clase para posicionar un ícono */
 .msicn {
   position: absolute;
   /* Posiciona el ícono de manera absoluta en relación a su contenedor */
@@ -49,11 +54,12 @@
   top: 50px;
   /* Se posiciona a 50px desde la parte superior */
   right: 100px;
+
   /* Se posiciona a 100px desde la derecha */
   @media screen and (max-width: 750px) {
-      top: 20px;
-          right: 30px;
-    }
+    top: 20px;
+    right: 30px;
+  }
 }
 
 .micon-text {
@@ -68,112 +74,129 @@
   z-index: 10;
 
   @media screen and (max-width: 750px) {
-      top: 20px;
-          right: 60px;
-    }
+    top: 20px;
+    right: 60px;
+  }
 }
 
-  
-  .img1 {
-    width: 15px;
-    height: 14px;
-  }
-  /* Define las dimensiones para una imagen. */
-  
-  .green {
-    color: #85bb65;
-  }
-  /* Aplica el color verde a un texto o elemento. */
-  
-  .naranja {
-    background-color: #fe8330 !important;
-  }
-  /* Aplica un color de fondo naranja con !important para sobrescribir otros estilos. */
-  
-  .blue2 {
-    background-color: rgb(71, 71, 209) !important;
-    color: white !important;
-  }
-  /* Aplica un fondo azul y texto blanco, ambos con !important. */
-  
-  .title {
-    position: absolute;
-    display: flex;
-    top: 30px;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    align-items: center;
-  }
-  /* Posiciona un título centrado en la parte superior de la pantalla,
+/* Clase para posicionar un texto junto a un ícono */
+
+
+.img1 {
+  width: 15px;
+  height: 14px;
+}
+
+/* Define las dimensiones para una imagen. */
+
+.green {
+  color: #85bb65;
+}
+
+/* Aplica el color verde a un texto o elemento. */
+
+.naranja {
+  background-color: #fe8330 !important;
+}
+
+/* Aplica un color de fondo naranja con !important para sobrescribir otros estilos. */
+
+.blue2 {
+  background-color: rgb(71, 71, 209) !important;
+  color: white !important;
+}
+
+/* Aplica un fondo azul y texto blanco, ambos con !important. */
+
+.title {
+  position: absolute;
+  display: flex;
+  top: 30px;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+/* Posiciona un título centrado en la parte superior de la pantalla,
      utilizando flexbox para alinear el contenido. */
-  
-  .iorder {
-    width: 50px;
-    padding: 8px;
-  }
-  /* Define el ancho y padding para un elemento con la clase iorder. */
-  
-  .margin {
-    padding-bottom: 20px;
-  }
-  /* Agrega un padding inferior de 20px. */
-  
-  .margin-top {
-    margin-top: 100px;
-  }
-  /* Agrega un margen superior de 100px. */
-  
-  .white {
-    color: white !important;
-  }
-  /* Aplica el color blanco al texto, con !important para sobrescribir otros estilos. */
-  
-  .f24 {
-    font-size: 24px;
-  }
-  /* Define el tamaño de fuente a 24px. */
-  
-  .center {
-    text-align: center;
-  }
-  /* Centra el texto. */
-  
-  mat-sidenav {
-    width: 210px;
-    background-color: rgb(48, 47, 47);
-  }
-  /* Estilos específicos para un componente de barra lateral (sidenav) de Angular Material. */
-  
-  .icon {
-    position: absolute;
-    width: 30px;
-    height: 20px;
-    top: 50px;
-    right: 100px;
-  }
-  /* Define un icono posicionado de manera absoluta. */
-  
-  mat-sidenav-container {
-    height: 100%;
-    background-color: transparent;
-  }
-  /* Define el estilo del contenedor de la barra lateral, con altura completa y fondo transparente. */
-  
-  .p-b {
-    position: absolute;
-    bottom: 10px;
-  }
-  /* Posiciona un elemento en la parte inferior de la pantalla. */
-  
-  .transparent {
-    padding: 0px;
-    background-color: transparent;
-    border: 2px solid darkgray;
-    backdrop-filter: blur(200px);
-    border-radius: 25px;
-    height: 500px;
-  }
-  /* Define un contenedor transparente con borde gris oscuro,
+
+.iorder {
+  width: 50px;
+  padding: 8px;
+}
+
+/* Define el ancho y padding para un elemento con la clase iorder. */
+
+.margin {
+  padding-bottom: 20px;
+}
+
+/* Agrega un padding inferior de 20px. */
+
+.margin-top {
+  margin-top: 100px;
+}
+
+/* Agrega un margen superior de 100px. */
+
+.white {
+  color: white !important;
+}
+
+/* Aplica el color blanco al texto, con !important para sobrescribir otros estilos. */
+
+.f24 {
+  font-size: 24px;
+}
+
+/* Define el tamaño de fuente a 24px. */
+
+.center {
+  text-align: center;
+}
+
+/* Centra el texto. */
+
+mat-sidenav {
+  width: 210px;
+  background-color: rgb(48, 47, 47);
+}
+
+/* Estilos específicos para un componente de barra lateral (sidenav) de Angular Material. */
+
+.icon {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  top: 50px;
+  right: 100px;
+}
+
+/* Define un icono posicionado de manera absoluta. */
+
+mat-sidenav-container {
+  height: 100%;
+  background-color: transparent;
+}
+
+/* Define el estilo del contenedor de la barra lateral, con altura completa y fondo transparente. */
+
+.p-b {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* Posiciona un elemento en la parte inferior de la pantalla. */
+
+.transparent {
+  padding: 0px;
+  background-color: transparent;
+  border: 2px solid darkgray;
+  backdrop-filter: blur(200px);
+  border-radius: 25px;
+  height: 500px;
+}
+
+/* Define un contenedor transparente con borde gris oscuro,
      fondo difuminado, bordes redondeados y altura fija. */
-  

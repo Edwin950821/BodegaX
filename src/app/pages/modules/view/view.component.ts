@@ -19,7 +19,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ViewComponent {
   
 
-  constructor(private appSvc: AppService, private dialog: MatDialog) { }
+  constructor(private appSvc: AppService, private dialog: MatDialog) { } // Inyecta AppService y MatDialog en el constructor.
 openSidebar() {
   
     this.appSvc.toggleSidebar()
@@ -37,7 +37,7 @@ openSidebar() {
 
   
 
-NgModule({
+NgModule({ // Decorador NgModule
 
   declarations: [
     AppComponent,
@@ -53,7 +53,7 @@ NgModule({
 })
 
 
-export class AppModule{
+export class AppModule{ // Exporta la clase AppModule
 
 }
 

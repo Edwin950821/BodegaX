@@ -54,7 +54,7 @@ export class RegisterComponent {
 
     // Realiza una petición HTTP POST para crear un nuevo administrador.
     this.http.post("http://localhost:8080/admin/create", {
-      role: "admin", // Rol del usuario.
+      role: "user", // Rol del usuario.
       nombre: this.username, // Nombre del usuario.
       id: this.id, // ID del usuario.
       password: this.password, // Contraseña del usuario.
@@ -65,7 +65,7 @@ export class RegisterComponent {
         // Abre un diálogo informativo indicando que el administrador fue creado.
         this.dialog.open(MessageDialog, {
           data: {
-            title: "Admin Creado Con Exito" // Mensaje de éxito.
+            title: "Usuario Creado Con Exito" // Mensaje de éxito.
           }
         });
 

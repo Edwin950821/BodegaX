@@ -12,6 +12,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { CommonModule } from "@angular/common";
 // Importa CommonModule que incluye directivas comunes de Angular como ngIf y ngFor.
 
+import { Injectable } from '@angular/core';
+
 import { ModalService } from "../pages/modules/home/home.component";
 // Importa ModalService desde su ruta relativa.
 
@@ -60,3 +62,5 @@ export class ConfirmDialog {
     this.mydialog.close(true); // Método para cerrar el diálogo y devolver 'true'.
   }
 }
+
+

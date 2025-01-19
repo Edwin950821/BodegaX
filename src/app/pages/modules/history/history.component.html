@@ -4,7 +4,8 @@
     <img src="/assets/menu.png" class="htop-left" (click)="openSidebar()">
 
     <!-- Imagen ícono en la esquina superior derecha (clase hsicn) -->
-    <span *ngIf="shouldShowUserName" class="hicon-text">{{user2.nombre}}</span><img src="/assets/icon.png" class="hsicn">
+    <span *ngIf="shouldShowUserName" class="hicon-text">{{user2.nombre}}</span><img src="/assets/icon.png"
+        class="hsicn">
 
     <!-- Tarjeta de Angular Material con fondo transparente -->
     <mat-card class="transparent">
@@ -27,7 +28,7 @@
                 <!-- Contenedor flexible que organiza los elementos de la tabla -->
                 <div class="hs-flex">
                     <!-- Tabla que muestra el historial de ventas -->
-                    <table >
+                    <table>
                         <!-- Fila de encabezado de la tabla -->
                         <tr>
                             <th *ngIf="role == 'admin'"> Cliente </th> <!-- Columna para el nombre del cliente -->
@@ -81,7 +82,7 @@
                                     </td>
                                     <!-- En esta celda (td), se muestra el nombre del producto accediendo a la propiedad 'producto' de cada objeto 'detalle'. -->
 
-                                    <td>  
+                                    <td>
                                         {{detalle.cantidad}}
                                     </td>
                                     <!-- Aquí se muestra la cantidad del producto accediendo a la propiedad 'Cantidad' de cada objeto 'detalle'. -->
@@ -113,6 +114,16 @@
                         </tr>
 
                     </table>
+
+                </div>
+
+                <div class="hcenter" *ngIf="user2.role === 'admin'"> <!-- Div centrado -->
+                    <button (click)="terminar()" mat-raised-button color="primary" class="hnaranja" rel="stylesheet">
+                        <!-- Botón para terminar jornada con evento de clic -->
+                        <img src="/assets/terminar.png" class="himg1"> <!-- Imagen en el botón -->
+
+                        Terminar Jornada
+                    </button>
 
                 </div>
 

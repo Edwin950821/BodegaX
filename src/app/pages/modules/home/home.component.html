@@ -23,7 +23,7 @@
                 <div class="center margin-t-100"> <!-- Div centrado con margen superior -->
                     <b *ngIf="role=='admin'">Total de cajas Vendidas</b> <!-- Texto en negrita para administradores -->
                     <b *ngIf="role=='user'">Total de cajas solicitadas</b> <!-- Texto en negrita para usuarios -->
-                    <h1>15</h1> <!-- Número de cajas -->
+                    <h1>total</h1> <!-- Número de cajas -->
                     <button  (click)="solicitarCajas()" mat-raised-button color="primary"
                         class="blue" >{{ buttonRole }}</button>
                     <!-- Botón para despachar caja con evento de clic para  -->
@@ -59,7 +59,7 @@
                     </table>
                 </div>
 
-                <div class="center"> <!-- Div centrado -->
+                <div class="center" *ngIf="user.role === 'admin'"> <!-- Div centrado -->
                     <button (click)="terminar()" mat-raised-button color="primary" class="naranja" rel="stylesheet">
                         <!-- Botón para terminar jornada con evento de clic -->
                         <img src="/assets/terminar.png" class="img1"> <!-- Imagen en el botón -->

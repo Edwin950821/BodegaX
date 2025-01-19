@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
 import { MaterialModule } from '../../../material.module';
@@ -27,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule, // Importa el módulo de formularios reactivos para crear formularios más complejos y escalables.
     HttpClientModule // Importa el módulo HttpClient para facilitar las solicitudes HTTP.
 ],
-providers:[
+providers:[// Define los proveedores de servicios para el módulo.
     CommonModule,
     SettingsRoutingModule,
     MaterialModule,

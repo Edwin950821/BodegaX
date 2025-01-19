@@ -151,6 +151,11 @@
    }
 }
 
+.scenter {
+    text-align: center;
+    /* Alineación del texto al centro */
+}
+
 
 .s-img {
     height: 20px;
@@ -159,4 +164,13 @@
     /* Aplica un margen de 6px alrededor de la imagen */
     cursor: pointer;
     /* Cambia el cursor a un puntero cuando se pasa por encima de la imagen, indicando que es interactiva */
+}
+
+.center-div{/* Clase para centrar un div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+
 }

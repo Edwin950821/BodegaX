@@ -2,7 +2,8 @@
 
     <img src="/assets/menu.png" class="stop-left" (click)="openSidebar()">
 
-    <span *ngIf="shouldShowUserName" class="sicon-text">{{user5.nombre}}</span><img src="/assets/icon.png" class="ssicn"> <!-- Icono superior derecho -->
+    <span *ngIf="shouldShowUserName" class="sicon-text">{{user5.nombre}}</span><img src="/assets/icon.png"
+        class="ssicn"> <!-- Icono superior derecho -->
 
     <div class="center stitle"> <!-- Contenedor centrado para el título -->
         <img src="/assets/setting.png" class="sorder"> <!-- Icono de configuración -->
@@ -22,13 +23,14 @@
         <div class="center"> <!-- Contenedor vacío centrado, podría ser utilizado para algún propósito futuro -->
         </div>
 
-        <div class="center"> <!-- Contenedor centrado para los botones y la tabla -->
+        <div class="center-div"> <!-- Contenedor centrado para los botones y la tabla -->
             <button (click)="crear()" mat-raised-button color="primary" class="sazul" rel="stylesheet"
                 href="c:\Users\USUARIO\Downloads\guardar.png"> <!-- Botón para crear un usuario -->
                 <img src="/assets/nuevo.png" class="simg1"> Crear Usuario <!-- Icono de nuevo usuario -->
             </button>
 
-            <div class="s-flex"> <!-- Contenedor flexible para la tabla -->
+            <div class="s-flex" style="max-height: 200px; overflow: auto; width: 400px;">
+                <!-- Contenedor flexible para la tabla -->
                 <table> <!-- Tabla para mostrar usuarios -->
                     <tr> <!-- Fila de encabezado de la tabla -->
                         <th>Estado</th> <!-- Encabezado para el estado -->
@@ -51,6 +53,19 @@
                     </tr>
 
                 </table>
+
+            </div>
+
+
+            <div class="scenter"> <!-- Div centrado -->
+                <button (click)="terminar()" mat-raised-button color="primary" class="snaranja" rel="stylesheet">
+                    <!-- Botón para terminar jornada con evento de clic -->
+                    <img src="/assets/terminar.png" class="simg1"> <!-- Imagen en el botón -->
+
+
+                    Terminar Jornada
+                </button>
+
             </div>
 
 

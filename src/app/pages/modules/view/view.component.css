@@ -139,7 +139,8 @@
       top: 20px;
           right: 60px;
     }
-}
+} 
+/* Clase para posicionar un texto junto a un ícono */
   
   mat-sidenav {
     width: 210px;

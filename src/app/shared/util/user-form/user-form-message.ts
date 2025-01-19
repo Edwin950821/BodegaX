@@ -123,7 +123,7 @@ export class UserFormDialog {
     }
   }
 
-  cancel(){
+  cancel(){ // Método para cancelar la operación y cerrar el diálogo
     this.mydialog.close(false);
   }
 

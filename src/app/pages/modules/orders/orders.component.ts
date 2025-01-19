@@ -34,9 +34,6 @@ export class OrdersComponent {
   }
 
 
-
-
-
   get shouldShowUserName(): boolean {
     return !this.sidebarOpen || !this.isMobile || window.innerWidth > 768;
   }

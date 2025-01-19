@@ -65,7 +65,7 @@ export class LoginComponent {
           title: "Hay campos vacios" // Mensaje que se muestra en el diálogo
         }
       });
-      return; 
+      return; // Termina la ejecución del método
     }
     
   }

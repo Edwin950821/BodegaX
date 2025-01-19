@@ -4,6 +4,7 @@ import { UserFormDialog } from '../../../shared/util/user-form/user-form-message
 import { HttpClient } from '@angular/common/http'; // Importa el servicio HttpClient para realizar peticiones HTTP.
 import { ConfirmDialog } from '../../../shared/util/confirm/confirm-message'; // Importa el componente de diálogo para confirmar acciones.
 import { AppService } from '../../../app.service';
+import { TerminarJornada } from '../../../shared/util/terminar/terminar-jornada';
 
 @Component({
   selector: 'app-settings', // Define el selector del componente.
@@ -12,14 +13,16 @@ import { AppService } from '../../../app.service';
 })
 export class SettingsComponent implements OnInit {
 
+
   sidebarOpen: boolean = true; // Inicializa 'sidebarOpen' en 'true', indicando que el sidebar está abierto de forma predeterminada. Se utilizará para alternar la visibilidad del sidebar.
   isMobile: boolean = window.innerWidth <= 768; // Inicializa 'isMobile' en función del ancho actual de la pantalla. Si el ancho es menor o igual a 768px, se considera una pantalla móvil (true); de lo contrario, será false.
 
   usuarios: any; // Declara una variable para almacenar la lista de usuarios.
 
   user5 = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}");
-  
-  
+  clientes: any;
+
+
 
 
   ngOnInit(): void { // Método que se llama cuando se inicializa el componente.
@@ -29,7 +32,6 @@ export class SettingsComponent implements OnInit {
   getUsers() { // Método para obtener usuarios desde la API.
     this.http.get("http://localhost:8080/admin/all").subscribe((res: any) => { // Realiza una petición GET a la API.
       this.usuarios = res; // Asigna la respuesta a la variable `usuarios`.
-      this.usuarios = this.usuarios.filter((u: { role: string; }) => u.role == "user"); // Filtra los usuarios para obtener solo aquellos con rol "user".
       console.log(this.usuarios); // Muestra la lista de usuarios en la consola.
     });
   }
@@ -46,6 +48,20 @@ export class SettingsComponent implements OnInit {
     this.dialog.open(UserFormDialog); // Abre el diálogo para crear un nuevo usuario.
   }
 
+  terminar() {// Método para abrir el diálogo de creación de usuario.
+
+    this.dialog.open(TerminarJornada, {
+      data: {
+        title: '',
+        clientes: this.clientes
+      },
+
+
+    });
+
+
+  }
+
   editar(user: any) { // Método para editar un usuario existente.
     var res = this.dialog.open(UserFormDialog, {
       data: { // Abre el diálogo de edición con los datos del usuario.
@@ -60,23 +76,23 @@ export class SettingsComponent implements OnInit {
       this.getUsers();
     });
 
-   
+
   }
 
-  constructor(private dialog: MatDialog, private http: HttpClient, private appSvc: AppService) { 
-    
-      // Detecta cambios en el tamaño de la pantalla
-      window.addEventListener('resize', () => {
+  constructor(private dialog: MatDialog, private http: HttpClient, private appSvc: AppService) {
+
+    // Detecta cambios en el tamaño de la pantalla
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 768;
+
+
+
+      checkScreenSize(); {
         this.isMobile = window.innerWidth <= 768;
-  
-  
-  
-        checkScreenSize(); {
-          this.isMobile = window.innerWidth <= 768;
-        }
-  
-      });
-    
+      }
+
+    });
+
   } // Inyecta los servicios MatDialog y HttpClient.
 
   get shouldShowUserName(): boolean {
@@ -95,7 +111,7 @@ export class SettingsComponent implements OnInit {
       }
     });
 
-   
+
   }
 
 
@@ -107,7 +123,7 @@ export class SettingsComponent implements OnInit {
   }
 
 }
-function checkScreenSize() {
+function checkScreenSize() {// Método para verificar el tamaño de la pantalla.
   throw new Error('Function not implemented.');
 }
 

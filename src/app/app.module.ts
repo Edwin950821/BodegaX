@@ -17,22 +17,22 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
 @NgModule({
-  declarations: [
+  declarations: [ //declarations es una propiedad que contiene una lista de componentes, directivas y tuberías que pertenecen al módulo
     CheckboxComponent,
     AppComponent,
     
 
   ],
-  imports: [
+  imports: [ //imports es una propiedad que contiene una lista de módulos que se importan en el módulo
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
 
   ],
-  providers: [
+  providers: [ //providers es una propiedad que contiene una lista de servicios que se proporcionan en el módulo
     provideAnimationsAsync(), AppService
   ],
-  bootstrap: [AppComponent,ErrorHandler],
+  bootstrap: [AppComponent,ErrorHandler],//bootstrap es una propiedad que contiene una lista de componentes que se inician al cargar el módulo
 
 
 })
