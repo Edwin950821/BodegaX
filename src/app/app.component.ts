@@ -10,6 +10,8 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css'] // Indica el archivo de estilos CSS asociado con este componente.
 })
 
+
+
 export class AppComponent implements OnInit{
   title = 'BodegaX-angular';
   role = 'client'

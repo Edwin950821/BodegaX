@@ -21,7 +21,7 @@ import { SolicitarCaja } from '../../../shared/util/solicitar-caja/solicitar-caj
 })
 export class HomeComponent {
 
- 
+
   sidebarOpen: boolean = true; // Inicializa 'sidebarOpen' en 'true', indicando que el sidebar está abierto de forma predeterminada. Se utilizará para alternar la visibilidad del sidebar.
   isMobile: boolean = window.innerWidth <= 768; // Inicializa 'isMobile' en función del ancho actual de la pantalla. Si el ancho es menor o igual a 768px, se considera una pantalla móvil (true); de lo contrario, será false.
 
@@ -35,7 +35,9 @@ export class HomeComponent {
 
 
   user = JSON.parse(sessionStorage.getItem("bodegax") || "{'role': ''}"); // Obtiene el usuario almacenado en sessionStorage o un objeto vacío si no hay usuario.
-click: any; // Propiedad para almacenar el evento click.
+  click: any; // Propiedad para almacenar el evento click.
+  total: any;
+  totalVenta = 0;
 
   constructor(private appSvc: AppService, private dialog: MatDialog, private http: HttpClient, private fb: FormBuilder) {// Inyecta AppService, MatDialog, HttpClient y FormBuilder.
 
@@ -63,6 +65,16 @@ click: any; // Propiedad para almacenar el evento click.
             this.clientes = res2.filter((r: any) => r.role == 'user'); // Filtra y almacena solo los clientes con rol 'user'.
           }
         );
+
+        this.http.get("http://localhost:8080/producto-ventas/all").subscribe(
+          (res4: any) => {
+            res4.forEach((pr: any) => {
+              // Busca en el array 'productos' el producto que coincida con 'uuid_producto' de la venta.
+              pr.producto = this.productos.find(c => c.uuid == pr.uuid_producto).nombre;
+              this.totalVenta += pr.cantidad;
+            });
+          }
+        )
       }
     );
   }
@@ -71,8 +83,8 @@ click: any; // Propiedad para almacenar el evento click.
     // Método para abrir el diálogo de solicitar cajas.
     console.log(`${this.role === 'admin' ? 'El admin' : 'El usuario'} está realizando una acción con las cajas.`);
     var clients = this.clientes // Filtra los clientes según el rol del usuario.
-    if(this.user.role === 'user'){
-      clients = this.clientes.filter(i=> i.uuid === this.user.uuid)// Filtra los clientes según el UUID del usuario.
+    if (this.user.role === 'user') {
+      clients = this.clientes.filter(i => i.uuid === this.user.uuid)// Filtra los clientes según el UUID del usuario.
     }
     this.dialog.open(DespacharCaja, {// Abre el diálogo de despachar caja.
       data: {
@@ -81,10 +93,10 @@ click: any; // Propiedad para almacenar el evento click.
         productos: this.productos
       }
 
-     
+
     });
 
-    
+
   }
 
   terminar() {// Método placeholder para finalizar alguna acción.
@@ -101,7 +113,7 @@ click: any; // Propiedad para almacenar el evento click.
     });
 
   }
-  
+
 
 
 
@@ -116,14 +128,14 @@ click: any; // Propiedad para almacenar el evento click.
     return !this.sidebarOpen || !this.isMobile || window.innerWidth > 768;
   }
 
-  
+
 
   icon() { }
   // Método placeholder, posiblemente para manejar iconos en el futuro.
 
   get buttonRole(): string {
     return this.user.role === 'user' ? 'Solicitar Caja' : 'Despachar Caja';
-}
+  }
 }
 
 function checkScreenSize() {// Función para verificar el tamaño de la pantalla.

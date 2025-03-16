@@ -23,7 +23,7 @@
                 <div class="center margin-t-100"> <!-- Div centrado con margen superior -->
                     <b *ngIf="role=='admin'">Total de cajas Vendidas</b> <!-- Texto en negrita para administradores -->
                     <b *ngIf="role=='user'">Total de cajas solicitadas</b> <!-- Texto en negrita para usuarios -->
-                    <h1>total</h1> <!-- Número de cajas -->
+                    <h1> {{totalVenta}}</h1> <!-- Número de cajas -->
                     <button  (click)="solicitarCajas()" mat-raised-button color="primary"
                         class="blue" >{{ buttonRole }}</button>
                     <!-- Botón para despachar caja con evento de clic para  -->
